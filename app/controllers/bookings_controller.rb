@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-
-
   def index
     @bookings = policy_scope(Booking)
   end
@@ -8,12 +6,14 @@ class BookingsController < ApplicationController
   def new
     @toy = Toy.find(params[:toy_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
-    @booking = Booking.new(bookings_params)
+    @booking = Booking.new(booking_params)
     @booking.toy = Toy.find(params[:toy_id])
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to root_path # we need to update this once we have the root for booking index
     else
@@ -21,9 +21,19 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      # redirect_to # up to you...
+    else
+      # render # where was the booking update form?
+      render :update
+    end
+  end
+
   private
 
-  def bookings_params
+  def booking_params
     params.require(:booking).permit(:start_date, :end_date, :delivery_option)
   end
 end
