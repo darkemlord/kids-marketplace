@@ -7,8 +7,14 @@ class ToysController < ApplicationController
   end
 
   def show
-    @toy = Toy.find(params[:id])
+    #@toy = Toy.find(params[:id])
+    set_toy
   end
 
+  private
+  def set_toy
+    @toy = Toy.find(params[:id])
+    authorize @toy
+  end
 
 end
