@@ -62,7 +62,7 @@ flickr_toy_collection.each_with_index do |item, index|
     dates_available:Date.today,
     price:rand(10..1000),
     photo_url:item[1])
-  puts "Toy #{index}: #{item[0]}"
+  puts "Toy #{index}: #{item[0]}. "
 end
 
 puts "created #{Toy.count} toys. :) and users."
