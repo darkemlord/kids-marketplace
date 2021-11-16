@@ -2,23 +2,23 @@
 <h1>Your Bookings</h1>
 
 <% @bookings.each do |booking| %>
-<div class="card m-2 p-2">
-  <ul>
-    <li>
-<%= link_to toy_path(booking.toy) do  %>
-  <div class="bookings_image d-flex">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEUe-RjYR4P2NgpfLTfA6yTMppvdRm7qh3AQ&usqp=CAU" alt="toy image">
-    <%# <%= cl_image_tag booking.toy.photo, height: 300, width: 400, crop: :fill %>
+    <div class="card card-config">
+  <%= link_to toy_path(booking.toy), class:"btn" do  %>
+      <ul>
+        <li>
+          <div class="d-flex border bookings_card justify-content-between p-2">
+            <%= image_tag booking.toy.photo.record.photo_url, height: 300, width: 400, crop: :fill, class:"bookings_image" %>
 
-    <div class="button d-flex">
-      <%= booking.toy.name %> <%= booking.toy.user.email %> <%= booking.approval_status %>
-
+  <%# <div class="d-flex "> %>
+            <p><%= booking.toy.name %></p>
+            <p><%= booking.toy.user.email %></p>
+            <p><%= booking.approval_status %></p>
+<%# </div> %>
+          </div>
+        </li>
+      </ul>
+  <% end %>
     </div>
-  </div>
-<% end %>
-    </li>
-  </ul>
-</div>
 <% end %>
 
 <%= link_to "Return to Toys", toys_path, class: "btn btn-dark"  %>
