@@ -2,6 +2,16 @@
 <h1>Your Bookings</h1>
 
 <% @bookings.each do |booking| %>
+<%= simple_form_for booking do |f| %>
+  <%= f.input :approval_status, as: :hidden, input_html: { value: 'accepted'} %>
+  <%= f.submit 'Accept', class: 'btn btn-info' %>
+<% end %>
+
+<%= simple_form_for booking do |f| %>
+  <%= f.input :approval_status, as: :hidden, input_html: { value: 'rejected'} %>
+  <%= f.submit 'Reject', class: 'btn btn-info' %>
+<% end %>
+
 <div class="card m-2 p-2">
   <ul>
     <li>
