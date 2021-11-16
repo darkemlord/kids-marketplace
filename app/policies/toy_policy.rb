@@ -4,4 +4,6 @@ class ToyPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+
 end

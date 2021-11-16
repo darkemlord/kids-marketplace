@@ -1,0 +1,79 @@
+a {
+  text-decoration:none !important;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+
+  :hover {
+    color: white;
+  }
+}
+
+
+
+.toy-info {
+  overflow: hidden;
+}
+
+.toy-photo {
+  width: 200;
+  height: 200;
+}
+
+.show-title {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.toy-details{
+  overflow: hidden;
+  padding: 16px;
+  padding-bottom: 70px;
+
+  h3 {
+    font-size: 16px;
+  }
+}
+
+.detail {
+  display: flex;
+
+}
+
+.go-booking {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  text-align: center;
+  background-color: white;
+}
+
+.padding-bottom {
+  padding-bottom: 60px;
+}
+
+.responsive {
+      width: 40%;
+}
+
+@media(max-width: 700px) {
+    .responsive {
+      width: 90%;
+  }
+}
