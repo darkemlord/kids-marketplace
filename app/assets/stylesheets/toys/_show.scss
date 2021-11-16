@@ -9,14 +9,15 @@ a {
   }
 }
 
+
+
 .toy-info {
   overflow: hidden;
 }
 
-.toy-photo{
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
+.toy-photo {
+  width: 200;
+  height: 200;
 }
 
 .show-title {
@@ -46,6 +47,11 @@ a {
   h3 {
     font-size: 16px;
   }
+}
+
+.detail {
+  display: flex;
+
 }
 
 .go-booking {
