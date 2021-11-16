@@ -1,26 +1,47 @@
 <div class="component">
   <div class="toy-info">
-    <%= @toy.photo_url %>
+    <div class="toy-photo">
+      <%= image_tag @toy.photo_url %>
+    </div>
     <%# cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
     <% if false %>
     <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('list_background.jpg') %>)">
     <% end %>
     <div class="show-title">
-      <h1><%= @toy.name %></h1>
-      <p>Location<%# @user_id.location %></p>
+      <div>
+        <h1><%= @toy.name %></h1>
+        <p>Location<%# @user_id.location %></p>
+      </div>
       <p>★★★<%# @toy.rating %></p>
     </div>
-    <div class="border-bottom"></div>
 
-  <h3>Description:</h3>
-  <%= @toy.description %>
+  <div class="border-bottom"></div>
 
-  <h3>Category:</h3>
-  <%= @toy.category %>
+  <div class="toy-details">
+    <h3>Description:</h3>
+    <% if @toy.description != nil %>
+      <p><%= @toy.description %></p>
+    <% else %>
+      <p>No description to show</p>
+    <% end %>
 
-  <h3>Condition:</h3>
-  <%= @toy.condition %>
+    <h3>Category:</h3>
+    <% if @toy.category != nil %>
+      <p><%= @toy.category %></p>
+    <% else %>
+      <p>Nil</p>
+    <% end %>
 
-  <h2>$<%= @toy.price %></h2>
-  <h2><%= link_to 'Book Now', new_toy_booking_path(@toy) %></h2>
+    <h3>Condition:</h3>
+    <% if @toy.condition != nil %>
+      <p><%= @toy.condition %></p>
+    <% else %>
+      <p>Nil</p>
+    <% end %>
+  </div>
+
+  <div class="go-booking">
+    <h2>$<%= @toy.price %></h2>
+    <div class="btn btn-primary"><%= link_to 'Book Now', new_toy_booking_path(@toy) %></div>
+  </div>
 </div>
