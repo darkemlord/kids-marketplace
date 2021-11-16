@@ -5,8 +5,5 @@ class ToyPolicy < ApplicationPolicy
     end
   end
 
-  def show?
-    true
-  end
 
 end
