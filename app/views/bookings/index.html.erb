@@ -2,23 +2,23 @@
 <h1>Your Bookings</h1>
 
 <% @bookings.each do |booking| %>
-    <div class="card card-config">
-  <%= link_to toy_path(booking.toy), class:"btn" do  %>
-      <ul>
-        <li>
-          <div class="d-flex border bookings_card justify-content-between p-2">
-            <%= image_tag booking.toy.photo.record.photo_url, height: 300, width: 400, crop: :fill, class:"bookings_image" %>
 
-  <%# <div class="d-flex "> %>
-            <p><%= booking.toy.name %></p>
-            <p><%= booking.toy.user.email %></p>
-            <p><%= booking.approval_status %></p>
-<%# </div> %>
-          </div>
-        </li>
-      </ul>
-  <% end %>
-    </div>
+        <div class="card-product m-2">
+  <%= image_tag booking.toy.photo.record.photo_url, height: 300, width: 400, crop: :fill %>
+  <div class="card-product-infos">
+    <p>
+    <h2><%= link_to booking.toy.name, toy_path(booking.toy)%></h2>
+    <p><%= booking.toy.user.email %></p>
+    <% if booking.approval_status == "approved" %>
+      <p style="color:#008000"><%= booking.approval_status %></p>
+    <% elsif booking.approval_status == "pending" %>
+      <p style="color:#FFA500"><%= booking.approval_status %></p>
+    <% elsif booking.approval_status == "denied" %>
+      <p style="color:#FF0000"><%= booking.approval_status %></p>
+    <% end %>
+  </div>
+</div>
+
 <% end %>
 
 <%= link_to "Return to Toys", toys_path, class: "btn btn-dark"  %>
