@@ -1,12 +1,12 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
-    raise
   end
 
   def create
     @booking = Booking.new(bookings_params)
     @booking.toy = @toy
+    @booking.user = @user
     if @booking.save
       redirect_to toy_path(@toy)
     else
