@@ -3,5 +3,9 @@ class ToyPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+
+    def show?
+      true
+    end
   end
 end

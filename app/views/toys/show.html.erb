@@ -1,10 +1,11 @@
 <p><%= link_to 'Back', toys_path %></p>
 
-<%# @toy.photo_url %>
+<%= @toy.photo_url %>
+<%# cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
 
 <h1 class="show-name"><%= @toy.name %></h1>
 
-<p><%= @user_id.location %></p>
+<p>Location<%# @user_id.location %></p>
 
 <p><%= @toy.rating %></p>
 
@@ -17,5 +18,5 @@
 <h3>Condition:</h3>
 <%= @toy.condition %>
 
-<h2><%= @toy.price %></h2>
-<h2><% link_to 'Book Now', toy_booking_path %>
+<h2>$<%= @toy.price %></h2>
+<h2><% link_to 'Book Now', new_toy_booking_path(@toy) %>
