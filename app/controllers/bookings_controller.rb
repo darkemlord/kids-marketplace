@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
 
-
   def index
     @bookings = policy_scope(Booking)
   end
@@ -24,10 +23,10 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      # redirect_to # up to you...
+      redirect_to bookings_path
     else
       # render # where was the booking update form?
-      render :update
+      render :index
     end
   end
 
