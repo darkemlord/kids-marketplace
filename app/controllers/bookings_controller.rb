@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.toy = Toy.find(params[:toy_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to root_path
+      redirect_to root_path # we need to update this once we have the root for booking index
     else
       render :new
     end
