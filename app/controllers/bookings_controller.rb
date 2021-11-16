@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-
-
   def index
     @bookings = policy_scope(Booking)
   end
@@ -8,12 +6,14 @@ class BookingsController < ApplicationController
   def new
     @toy = Toy.find(params[:toy_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.toy = Toy.find(params[:toy_id])
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to root_path # we need to update this once we have the root for booking index
     else
