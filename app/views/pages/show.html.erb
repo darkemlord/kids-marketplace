@@ -1,0 +1,21 @@
+<p><%= link_to 'Back', toys_path %></p>
+
+<%# @toy.photo_url %>
+
+<h1 class="show-name"><%= @toy.name %></h1>
+
+<p><%= @user_id.location %></p>
+
+<p><%= @toy.rating %></p>
+
+<h3>Description:</h3>
+<%= @toy.description %>
+
+<h3>Category:</h3>
+<%= @toy.category %>
+
+<h3>Condition:</h3>
+<%= @toy.condition %>
+
+<h2><%= @toy.price %></h2>
+<h2><% link_to 'Book Now', toy_booking_path %>
