@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(bookings_params)
+    @booking = Booking.new(booking_params)
     @booking.toy = Toy.find(params[:toy_id])
     @booking.user = current_user
     if @booking.save
@@ -15,9 +15,19 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      # redirect_to # up to you...
+    else
+      # render # where was the booking update form?
+      render :update
+    end
+  end
+
   private
 
-  def bookings_params
+  def booking_params
     params.require(:booking).permit(:start_date, :end_date, :delivery_option)
   end
 end
