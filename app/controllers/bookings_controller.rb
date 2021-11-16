@@ -1,14 +1,15 @@
 class BookingsController < ApplicationController
   def new
+    @toy = Toy.find(params[:toy_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(bookings_params)
-    @booking.toy = @toy
-    @booking.user = @user
+    @booking.toy = Toy.find(params[:toy_id])
+    @booking.user = current_user
     if @booking.save
-      redirect_to toy_path(@toy)
+      redirect_to root_path
     else
       render :new
     end
@@ -17,7 +18,6 @@ class BookingsController < ApplicationController
   private
 
   def bookings_params
-    params.require(:booking).permit(:start_date, :end_date, :delivery_option, :user_id, :toy_id)
+    params.require(:booking).permit(:start_date, :end_date, :delivery_option)
   end
-
 end
