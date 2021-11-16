@@ -7,7 +7,8 @@ class ToysController < ApplicationController
   end
 
   def show
-    #@toy = policy_scope(Toy).find(params[:id])
+    #@toy = Toy.find(params[:id])
+    set_toy
   end
 
   private
