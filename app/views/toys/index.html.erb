@@ -6,12 +6,14 @@
 <div class="cards">
   <% @toys.each do |toy| %>
     <div class="card">
-    <img class="card-img-top" src="<%= toy.photo.attached? ? cl_image_path(toy.photo.key) : asset_path('#') %>" alt="Card image cap">
+    <!-- <%= image_tag toy.photo_url, width: :full, crop: :fill %> -->
+    <img src="http://res.cloudinary.com/gperilli/image/upload/v1/development/<%= toy.photo.key %>">
+    <p></p>
+    <!-- <img class="card-img-top" src="<%= toy.photo.attached? ? cl_image_path(toy.photo.key) : asset_path('#') %>" alt="Card image cap"> -->
 
     <div class="card-body">
     <h4 class="card-title"><%= toy.name %></h4>
-    <p class="card-text">
-    </p>
+    <p class="card-text"><%= toy.photo.key %></p>
     <a href=<%= toy_path(toy.id) %> class="btn btn-primary">See </a>
 
     </div>
