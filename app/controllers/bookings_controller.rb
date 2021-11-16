@@ -24,8 +24,10 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
+    @booking.user = current_user
+    authorize @booking
     if @booking.update(booking_params)
-      redirect_to bookings_path
+      redirect_to toys_path
     else
       # render # where was the booking update form?
       render :index
