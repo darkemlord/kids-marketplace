@@ -43,6 +43,7 @@ a {
 .toy-details{
   overflow: hidden;
   padding: 16px;
+  padding-bottom: 70px;
 
   h3 {
     font-size: 16px;
@@ -59,4 +60,20 @@ a {
   display: flex;
   justify-content: space-between;
   position: relative;
+  text-align: center;
+  background-color: white;
+}
+
+.padding-bottom {
+  padding-bottom: 60px;
+}
+
+.responsive {
+      width: 40%;
+}
+
+@media(max-width: 700px) {
+    .responsive {
+      width: 90%;
+  }
 }
