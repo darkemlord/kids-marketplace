@@ -1,17 +1,17 @@
 <div class="container">
+<h1>Your Bookings</h1>
 
 <% @bookings.each do |booking| %>
 <div class="card m-2 p-2">
   <ul>
     <li>
-      <%= booking.toy.name %> <%= booking.user.email %>
+<%= link_to toy_path(booking.toy) do  %>
+  <div class="button">
+    <%= booking.toy.name %> <br> <%= booking.toy.user.email %> <br> <%= booking.approval_status %>
+  </div>
+<% end %>
     </li>
   </ul>
 </div>
 <% end %>
-
-
-
-
-
 </div>
