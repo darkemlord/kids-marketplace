@@ -1,4 +1,9 @@
 class BookingsController < ApplicationController
+
+
+  def index
+    @bookings = policy_scope(Booking)
+
   def new
     @booking = Booking.new
   end
@@ -18,6 +23,7 @@ class BookingsController < ApplicationController
 
   def bookings_params
     params.require(:booking).permit(:start_date, :end_date, :delivery_option, :user_id, :toy_id)
+
   end
 
 end

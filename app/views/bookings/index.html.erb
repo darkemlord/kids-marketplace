@@ -1,0 +1,17 @@
+<div class="container">
+
+<% @bookings.each do |booking| %>
+<div class="card m-2 p-2">
+  <ul>
+    <li>
+      <%= booking.toy.name %> <%= booking.user.email %>
+    </li>
+  </ul>
+</div>
+<% end %>
+
+
+
+
+
+</div>
