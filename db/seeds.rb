@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 puts "Deleting everything...."
 Toy.destroy_all
 puts "Destroyed toys."
@@ -55,14 +57,19 @@ toy_name = ["Sword", "Sponge Bob Doll", "Sailormoon doll", "Princess doll", "Min
 
 puts "creating toys"
 flickr_toy_collection.each_with_index do |item, index|
-  Toy.create!(
+  toy_image_file = URI.open(item[1])
+  image_cloudinary_filename = item[0].gsub(" ", "") + item[1][35..44]
+
+  toy = Toy.create!(
     user:users.sample,
     name:item[0],
     category:rand(0..1),
     dates_available:Date.today,
     price:rand(10..1000),
     photo_url:item[1])
-  puts "Toy #{index}: #{item[0]}. "
+  # adding the flickr photo-id to filename here to avoid duplicate image filenames
+  toy.photo.attach(io: toy_image_file, filename: item[0].gsub(" ", ""), content_type: 'image/jpg')
+  puts "Toy #{index}: #{item[0]}. Price: #{toy.price}. Cloudinary image file: #{image_cloudinary_filename}"
 end
 
 puts "created #{Toy.count} toys. :) and users."
