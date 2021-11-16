@@ -1,4 +1,10 @@
 class BookingsController < ApplicationController
+
+
+  def index
+    @bookings = policy_scope(Booking)
+  end
+
   def new
     @toy = Toy.find(params[:toy_id])
     @booking = Booking.new
