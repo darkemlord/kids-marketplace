@@ -6,12 +6,20 @@
   <ul>
     <li>
 <%= link_to toy_path(booking.toy) do  %>
-  <div class="button">
-    <%= booking.toy.name %> <br> <%= booking.toy.user.email %> <br> <%= booking.approval_status %>
+  <div class="bookings_image d-flex">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEUe-RjYR4P2NgpfLTfA6yTMppvdRm7qh3AQ&usqp=CAU" alt="toy image">
+    <%# <%= cl_image_tag booking.toy.photo, height: 300, width: 400, crop: :fill %>
+
+    <div class="button d-flex">
+      <%= booking.toy.name %> <%= booking.toy.user.email %> <%= booking.approval_status %>
+
+    </div>
   </div>
 <% end %>
     </li>
   </ul>
 </div>
 <% end %>
+
+<%= link_to "Return to Toys", toys_path, class: "btn btn-dark"  %>
 </div>
