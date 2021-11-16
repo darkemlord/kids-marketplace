@@ -11,8 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 2021_11_16_040817) do
-
+ActiveRecord::Schema.define(version: 2021_11_16_052812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_11_16_040817) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "approval_status"
+    t.integer "approval_status", default: 1
     t.date "start_date"
     t.date "end_date"
     t.integer "delivery_option"
