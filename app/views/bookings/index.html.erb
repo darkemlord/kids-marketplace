@@ -4,8 +4,6 @@
   </div>
 
   <% @bookings.each do |booking| %>
-
-
   <div class="card-product m-2">
     <%= image_tag booking.toy.photo.record.photo_url, height: 300, width: 400, crop: :fill %>
       <div class="card-product-infos">
@@ -19,6 +17,16 @@
           <p class ="booking-status" style="color:#FF0000"><%= booking.approval_status %></p>
         <% end %>
       </div>
+      <%= simple_form_for booking do |f| %>
+        <%= f.input :approval_status, as: :hidden, input_html: { value: 'accepted'} %>
+        <%= f.submit 'Accept', class: 'btn btn-info' %>
+      <% end %>
+
+      <%= simple_form_for booking do |f| %>
+        <%= f.input :approval_status, as: :hidden, input_html: { value: 'rejected'} %>
+        <%= f.submit 'Reject', class: 'btn btn-info' %>
+      <% end %>
+
   </div>
   <% end %>
 
