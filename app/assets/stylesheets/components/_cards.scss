@@ -44,8 +44,15 @@
 
 .booking-status {
   border: solid 1px;
-  width: 75%;
+  width: 80px;
   padding: 1px;
   text-align: center;
   border-radius: 2px;
+}
+
+.card-content {
+  @media(max-width: 700px) {
+    display: flex-column;
+
+  }
 }
