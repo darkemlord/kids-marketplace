@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to root_path # we need to update this once we have the root for booking index
+      redirect_to bookings_path # we need to update this once we have the root for booking index
     else
       render :new
     end
