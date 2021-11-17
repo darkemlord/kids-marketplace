@@ -6,10 +6,8 @@
 <div class="cards">
   <% @toys.each do |toy| %>
     <div class="card">
-    <!-- <%= image_tag toy.photo_url, width: :full, crop: :fill %> -->
     <img src="http://res.cloudinary.com/gperilli/image/upload/v1/development/<%= toy.photo.key %>">
     <p></p>
-    <!-- <img class="card-img-top" src="<%= toy.photo.attached? ? cl_image_path(toy.photo.key) : asset_path('#') %>" alt="Card image cap"> -->
 
     <div class="card-body">
     <h4 class="card-title"><%= toy.name %></h4>
@@ -18,7 +16,6 @@
 
     </div>
     </div>
-    <!-- <div class="#" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= toy.photo.attached? ? cl_image_path(toy.photo.key) : asset_path('#') %>); display: inline-block;"> -->
   <% end %>
 </div>
 
