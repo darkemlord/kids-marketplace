@@ -73,3 +73,16 @@ flickr_toy_collection.each_with_index do |item, index|
 end
 
 puts "created #{Toy.count} toys. :) and users."
+
+puts "creating bookings"
+10.times do
+  Booking.create(
+    start_date: Date.today,
+    end_date: Date.today,
+    delivery_option: 'deliver',
+    user_id: rand(1..3),
+    toy_id: rand(1..10)
+  )
+end
+
+puts "bookings created"
