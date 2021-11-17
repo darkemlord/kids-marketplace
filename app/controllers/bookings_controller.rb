@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to root_path # we need to update this once we have the root for booking index
+      redirect_to bookings_path # we need to update this once we have the root for booking index
     else
       render :new
     end
@@ -24,10 +24,9 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.user = current_user
     authorize @booking
     if @booking.update(booking_params)
-      redirect_to toys_path
+      redirect_to bookings_path
     else
       # render # where was the booking update form?
       render :index
@@ -37,6 +36,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :delivery_option)
+    params.require(:booking).permit(:start_date, :end_date, :delivery_option, :approval_status)
   end
 end
