@@ -17,14 +17,16 @@
           <p class ="booking-status" style="color:#FF0000"><%= booking.approval_status %></p>
         <% end %>
       </div>
-      <%= simple_form_for booking do |f| %>
-        <%= f.input :approval_status, as: :hidden, input_html: { value: 'approved'} %>
-        <%= f.submit 'Accept', class: 'btn btn-info' %>
-      <% end %>
+      <% if booking.pending? %>
+        <%= simple_form_for booking do |f| %>
+          <%= f.input :approval_status, as: :hidden, input_html: { value: 'approved'} %>
+          <%= f.submit 'Accept', class: 'btn btn-info' %>
+        <% end %>
 
-      <%= simple_form_for booking do |f| %>
-        <%= f.input :approval_status, as: :hidden, input_html: { value: 'denied'} %>
-        <%= f.submit 'Reject', class: 'btn btn-info' %>
+        <%= simple_form_for booking do |f| %>
+          <%= f.input :approval_status, as: :hidden, input_html: { value: 'denied'} %>
+          <%= f.submit 'Reject', class: 'btn btn-info' %>
+        <% end %>
       <% end %>
 
   </div>
