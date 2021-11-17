@@ -1,6 +1,6 @@
 <div class="responsive container d-flex flex-column justify-content-between">
-    <img style="width: 100%;" src="http://res.cloudinary.com/gperilli/image/upload/v1/development/<%= @toy.photo.key %>">
-      <%# cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
+
+      <%= cl_image_tag @toy.photo.key, class:'photo-class'%>
     <% if false %>
     <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('list_background.jpg') %>)">
     </div>
