@@ -71,7 +71,7 @@
 
 <div class="fixed-bottom">
   <div class="go-booking">
-    <h2>¥<%= @toy.price %></h2>
+    <h2>¥<%= @toy.price %><span style="font-size:18px">/ week</span></h2>
     <div class="btn btn-primary"><%= link_to 'Book Now', new_toy_booking_path(@toy) %></div>
   </div>
 </div>
