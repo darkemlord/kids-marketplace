@@ -43,8 +43,11 @@ flickr_toy_collection = [
   ["Collection of Board Games", "https://live.staticflickr.com/7422/14125947172_a424ade5d9_k.jpg", "https://www.flickr.com/photos/120600995@N07/14125947172/in/photolist-nwgaXj-7TPurp-9GyZ3j-9Gw8up-ga3wRN-3D4QWD-BTxTb4-7sTBJF-9Gw6Fx-6Sz8bB-9Gw82Z-eCKb7Z-irv2cF-6SDa11-9PM7Sz-zpZX9a-rroTu9-rCXRpB-61NJnc-dRPNRY-9GyZZf-8iRwPh-9yujq6-zkp56a-9asJEo-wn9Cxi-5M1HRY-7ymiA7-b3UQYM-e2tX6c-thCDwb-qD6aib-3ck3gq-dnEW5o-qoN9aQ-pJA1RZ-fQmbxs-yWofZF-fxqpDx-pdTuwi-e8ht5L-qoWqtz-9yxjGm-qFnREP-qs2XEq-rNXoyi-eiHTY7-qrTGuR-qs2BF9-Nskbe"]
 ]
 
+
+
+address = ["Tokyo", "London", "Chiba", "Hiroshima"]
 # A user can have many toys, but a toy only has one owner (Ask Sheriff Woody for more info)
-gareth = User.create!(email: "gareth@lewagon.com", password: "123456789" )
+gareth = User.create!(email: "gareth@lewagon.com", password: "123456789", child_age: rand(0..7), address:address.sample )
 anju = User.create!(email: "anju@lewagon.com", password: "123456789" )
 emanuel = User.create!(email: "emanuel@lewagon.com", password: "123456789" )
 louis = User.create!(email: "louis@lewagon.com", password: "123456789" )
@@ -60,10 +63,13 @@ flickr_toy_collection.each_with_index do |item, index|
   toy_image_file = URI.open(item[1])
   image_cloudinary_filename = item[0].gsub(" ", "") + item[1][35..44]
 
+category = ["music", "puzzle", "soft toy", "train", "car", "drawing"]
+
   toy = Toy.create!(
     user:users.sample,
     name:item[0],
-    category:rand(0..1),
+    category:category.sample,
+    condition:rand(0..2),
     dates_available:Date.today,
     price:rand(10..1000),
     photo_url:item[1])
