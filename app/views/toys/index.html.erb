@@ -1,24 +1,23 @@
-<h1>toys index</h1>
 
 
-<div class="wrapper" style="border: 1px solid black;">
-<div class="container">
-<div class="cards">
-  <% @toys.each do |toy| %>
-    <div class="card">
-    <img src="http://res.cloudinary.com/gperilli/image/upload/v1/development/<%= toy.photo.key %>">
-    <p></p>
 
-    <div class="card-body">
-    <h4 class="card-title"><%= toy.name %></h4>
-    <p class="card-text"><%= toy.photo.key %></p>
-    <a href=<%= toy_path(toy.id) %> class="btn btn-primary">See </a>
+
+<div class="wrapper" style="">
+  <div class="toy-grid-container">
+    <h1>All Our Toys And Kids Stuff</h1>
+    <div class="toy-grid">
+
+      <% @toys.each do |toy| %>
+        <div class="toy-grid-item">
+          <div class="photo-container">
+            <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
+          </div>
+            <%= link_to toy.name, toy_path(toy.id), class: "toy-text-class text-blue" %>
+            <p class="toy-text-class text-red">Rental: $<%= toy.price %></p>
+        </div>
+      <% end %>
 
     </div>
-    </div>
-  <% end %>
-</div>
 
-
-</div>
+  </div>
 </div>

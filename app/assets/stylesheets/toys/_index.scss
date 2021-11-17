@@ -1,1 +1,77 @@
 @import "show";
+
+.toy-grid-container {
+  max-width: 1580px;
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding: 0 8%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    background-color: transparent;
+    padding-bottom: 50px;
+}
+
+.toy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 30px;
+   border: 0px solid blue;
+  padding: 0px;
+}
+
+
+.toy-grid-item {
+  border: 0px solid red;
+}
+
+.photo-container {
+  height: 300px;
+  overflow:hidden;
+  margin-bottom: 8px;
+}
+
+.photo-class {
+  object-fit: cover;
+  width:100%;
+  height: 300px;
+}
+
+.toy-text-class {
+  width: 100%;
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.text-red {
+  color: red;
+}
+
+.text-blue {
+  color: blue;
+}
+
+@media(max-width: 700px) {
+  .toy-grid-item {
+    grid-column: 1 / 7;
+  }
+}
+
+
+@media (max-width: 880px) {
+  .toy-grid-container {
+    width: 100%;
+    float: left;
+}
+}
+
+@media (max-width: 600px) {
+  .toy-grid-container {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+}
