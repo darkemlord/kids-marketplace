@@ -14,5 +14,4 @@ class BookingPolicy < ApplicationPolicy
   def update?
     return true
   end
-
 end

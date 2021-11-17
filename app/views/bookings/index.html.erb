@@ -18,12 +18,12 @@
         <% end %>
       </div>
       <%= simple_form_for booking do |f| %>
-        <%= f.input :approval_status, as: :hidden, input_html: { value: 'accepted'} %>
+        <%= f.input :approval_status, as: :hidden, input_html: { value: 'approved'} %>
         <%= f.submit 'Accept', class: 'btn btn-info' %>
       <% end %>
 
       <%= simple_form_for booking do |f| %>
-        <%= f.input :approval_status, as: :hidden, input_html: { value: 'rejected'} %>
+        <%= f.input :approval_status, as: :hidden, input_html: { value: 'denied'} %>
         <%= f.submit 'Reject', class: 'btn btn-info' %>
       <% end %>
 
