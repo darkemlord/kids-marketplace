@@ -2,5 +2,5 @@
   <%= f.input :start_date, input_html: { class:'form-date' } %>
   <%= f.input :end_date, input_html: { class:'form-date'} %>
   <%= f.input :delivery_option, collection: Booking.delivery_options.keys %>
-  <%= f.submit class: 'btn btn-ghost' %>
+  <%= f.submit class: 'btn btn-ghost w-100' %>
 <% end %>
