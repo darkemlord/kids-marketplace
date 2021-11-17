@@ -64,10 +64,12 @@ flickr_toy_collection.each_with_index do |item, index|
   image_cloudinary_filename = item[0].gsub(" ", "") + item[1][35..44]
 
 category = ["music", "puzzle", "soft toy", "train", "car", "drawing"]
+description = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", nil ]
 
   toy = Toy.create!(
     user:users.sample,
     name:item[0],
+    description:description.sample,
     category:category.sample,
     condition:rand(0..2),
     dates_available:Date.today,
