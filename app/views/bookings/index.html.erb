@@ -2,10 +2,9 @@
   <div class="title">
     <h1 class="m-3 text-center">Your Bookings</h1>
   </div>
-
   <% @bookings.each do |booking| %>
-  <div class="card-product m-2">
-    <%= image_tag booking.toy.photo.record.photo_url, height: 300, width: 400, crop: :fill %>
+    <div class="card-product m-2">
+      <%= image_tag booking.toy.photo.record.photo_url, height: 300, width: 400, crop: :fill %>
       <div class="card-product-infos">
         <h2><%= link_to booking.toy.name, toy_path(booking.toy)%></h2>
         <p><%= booking.toy.user.email %></p>
@@ -21,14 +20,11 @@
         <%= f.input :approval_status, as: :hidden, input_html: { value: 'accepted'} %>
         <%= f.submit 'Accept', class: 'btn btn-info' %>
       <% end %>
-
       <%= simple_form_for booking do |f| %>
         <%= f.input :approval_status, as: :hidden, input_html: { value: 'rejected'} %>
         <%= f.submit 'Reject', class: 'btn btn-info' %>
       <% end %>
-
-  </div>
+    </div>
   <% end %>
-
   <%= link_to "Return to Toys", toys_path, class: "btn btn-dark mt-2"  %>
 </div>
