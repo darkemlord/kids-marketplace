@@ -2,97 +2,27 @@
   <div class="profile-top">
       <%= image_tag "https://avatars.githubusercontent.com/u/82207189?v=4" %>
     <h1><%= @user.name.upcase %><h1>
-  </div>
+    <p>Address: <%= @user.address %></p>
+    <p>Kid's age: <%= @user.child_age %></p>
 
-  <div class="toy-grid-item">
-    <% @user.toys.each do |toy| %>
-    <div class="photo-container">
-      <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
-    </div>
-    <%= link_to toy.name, toy_path(toy) %>
-    <p class="toy-text-class text-red">Rental: $<%= toy.price %></p>
-    <p class="toy-text-class text-red" style="color: #808080; font-size: 16px;"><%= toy.description %></p>
+
+
+<div class="border-bottom"></div>
+<h1>Toys</h1>
+    <div class="toy-grid">
+      <% @user.toys.each do |toy| %>
+        <div class="toy-grid__item">
+          <%= link_to toy_path(toy.id) do %>
+            <div class="toy-grid__item-photo-container">
+              <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
+            </div>
+            <div class="toy-grid__item-text-container">
+              <%= link_to toy.name, toy_path(toy.id), class: "toy-text--name km-text-dark km-font-main" %>
+              <p class="toy-text--description km-text-dark km-font-main"><%= toy.description %></p>
+              <p class="toy-text--price km-text-dark km-font-main">Rental: <strong class="km-text-price"><span>¥<%= toy.price %></strong></span>/week</p>
+            </div>
+          <% end %>
+        </div>
 <% end %>
-  </div>
-
-
-
-
-
-    <% if false %>
-    <div class="show-title">
-      <div>
-        <h1><%= @toy.name %></h1>
-        <p>Location<%# @user_id.location %></p>
-      </div>
-      <p>★★★<%# @toy.rating %></p>
-    </div>
-
-    <div class="border-bottom"></div>
-
-    <div class="toy-details">
-      <div class="detail">
-        <h3>Description:</h3>
-        <% if @toy.description != nil %>
-          <p><%= @toy.description %></p>
-        <% else %>
-          <p>No description to show</p>
-        <% end %>
-      </div>
-
-      <div class="detail">
-        <h3>Category:</h3>
-        <% if @toy.category != nil %>
-          <p><%= @toy.category.capitalize %></p>
-        <% else %>
-          <p>Nil</p>
-        <% end %>
-      </div>
-
-      <div class="detail">
-      <h3>Condition:</h3>
-        <% if @toy.condition != nil %>
-          <p><%= @toy.condition.capitalize %></p>
-        <% else %>
-          <p>Nil</p>
-        <% end %>
-      </div>
-
-      <div class="border-bottom"></div>
-      <h3><%= @toy.user.name %></h3>
-
-      <div class="detail">
-      <h3>Location:</h3>
-        <% if @toy.user.address != nil %>
-          <p><%= @toy.user.address.capitalize %></p>
-        <% else %>
-          <p>Nil</p>
-        <% end %>
-      </div>
-
-      <div class="detail">
-      <h3>Child's age:</h3>
-        <% if @toy.user.child_age != nil %>
-          <p><%= @toy.user.child_age %></p>
-        <% else %>
-          <p>Nil</p>
-        <% end %>
-      </div>
-
-
-    </div>
-  </div>
 </div>
-
-<div class="fixed-bottom">
-  <div class="go-booking">
-    <h2>¥<%= @toy.price %><span style="font-size:18px">/ week</span></h2>
-    <div class="btn btn-primary"><%= link_to 'Book Now', new_toy_booking_path(@toy) %></div>
-  </div>
 </div>
-
-
-, method: :delete, data: { confirm: "Do you want to delete #{bookmark.movie.title}" } do %>
-          <i class="far fa-trash-alt"></i>
-
-<% end %>
