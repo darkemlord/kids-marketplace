@@ -13,4 +13,8 @@ class ToyPolicy < ApplicationPolicy
     return true
   end
 
+  def create?
+    return true
+  end
+
 end

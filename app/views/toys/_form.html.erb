@@ -2,7 +2,8 @@
   <%= f.input :name, placeholder: 'Teddy bear', label: "Name" %>
   <%= f.input :description, placeholder: 'This is a cute Teddy bear!', label: "Description" %>
   <%= f.input :category, placeholder: 'Soft Toy', label: "Category" %>
-  <%= f.input :condition, collection: Toy.conditions, label: "Condition" %>
-  <%= f.input :photo_url, as: :file, label: "Image" %>
+  <%= f.input :price, placeholder: 'Soft Toy' %>
+  <%= f.input :condition, collection: Toy.conditions.keys, label: "Condition" %>
+  <%= f.input :photo, as: :file, label: "Image" %>
   <%= f.submit class: 'btn btn-ghost' %>
 <% end %>
