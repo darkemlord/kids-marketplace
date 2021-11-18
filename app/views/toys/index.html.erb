@@ -7,7 +7,11 @@
         <div class="toy-grid__item">
           <%= link_to toy_path(toy.id) do %>
             <div class="toy-grid__item-photo-container">
+            <% if toy.photo.attached? %>
               <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
+              <% else %>
+              <%= image_tag 'background.jpg', crop: :fill, class: "photo-class" %>
+              <% end %>
             </div>
             <div class="toy-grid__item-text-container">
               <%= link_to toy.name, toy_path(toy.id), class: "toy-text--name km-text-dark km-font-main" %>
