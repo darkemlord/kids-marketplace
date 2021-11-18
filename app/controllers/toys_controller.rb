@@ -23,7 +23,6 @@ class ToysController < ApplicationController
     if @toy.save
       redirect_to toy_path(@toy)
     else
-      raise
       render :new
     end
   end
