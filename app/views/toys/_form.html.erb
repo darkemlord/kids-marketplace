@@ -1,17 +1,7 @@
-
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Lent out your Toy!</h3>
-        <%= simple_form_for @toy do |f| %>
-          <%= f.input :name, placeholder: 'Name' %>
-          <%= f.input :description, placeholder: 'Description' %>
-          <%= f.input :category, placeholder: 'Cateogry' %>
-          <%= f.input :condition, collection: Toy.condition.keys %>
-          <%= f.submit class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<%= simple_form_for @toy do |f| %>
+  <%= f.input :name, placeholder: 'Teddy bear', label: "Name" %>
+  <%= f.input :description, placeholder: 'This is a cute Teddy bear!', label: "Description" %>
+  <%= f.input :category, placeholder: 'Soft Toy', label: "Category" %>
+  <%= f.input :condition, collection: Toy.conditions, label: "Condition" %>
+  <%= f.submit class: 'btn btn-ghost' %>
+<% end %>

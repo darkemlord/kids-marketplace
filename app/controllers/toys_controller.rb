@@ -33,6 +33,6 @@ class ToysController < ApplicationController
   end
 
   def toy_params
-    params.require(:toy).permit(:name, :description, :condition, :category)
+    params.require(:toys).permit(:name, :description, :condition, :category)
   end
 end
