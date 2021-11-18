@@ -3,6 +3,9 @@
   <div class="container d-flex flex-column justify-content-center align-items-start">
       <h1>Kids marketplace!</h1>
       <p>The best place to rent and borrow your toys!</p>
-      <%= link_to "See our toys!", :toys, class:"btn btn-ghost" %>
+      <div class="page-buttons">
+        <%= link_to "See our toys!", :toys, class:"btn btn-ghost" %>
+        <%= link_to "Lend your toys!", new_toy_path, class:"btn btn-ghost" %>
+      </div>
   </div>
 </div>
