@@ -1,7 +1,6 @@
 @import "show";
 
 .toy-grid-container {
-  max-width: 1580px;
     width: 100%;
     padding-top: 5px;
     padding-left: 30px;
@@ -25,14 +24,25 @@
 
 
 .toy-grid-item {
-  border: 0px solid red;
+  width: 400px;
+  height: 580px;
+  box-shadow: 10px -8px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 20px;
+  -webkit-box-shadow: 10px -8px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px -8px 5px 0px rgba(0,0,0,0.75);
+  background-color: white;
 }
 
 .photo-container {
   height: 300px;
-  overflow:hidden;
   margin-bottom: 8px;
+  img{
+    object-fit: fill;
+    border-radius: 20px 20px 0px 0px;
+  }
 }
+
+
 
 .photo-class {
   object-fit: cover;
@@ -57,7 +67,8 @@
 
 @media(max-width: 700px) {
   .toy-grid-item {
-    grid-column: 1 / 7;
+    width: 350px;
+    height: 500px;
   }
 }
 
@@ -70,8 +81,8 @@
 }
 
 @media (max-width: 600px) {
-  .toy-grid-container {
-    padding-left: 10px;
-    padding-right: 10px;
-}
+  .toy-grid-item {
+    width: 350px;
+    height: 450px;
+  }
 }

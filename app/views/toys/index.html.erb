@@ -5,10 +5,10 @@
 <div class="wrapper" style="">
   <div class="toy-grid-container">
     <h1>All Our Toys And Kids Stuff</h1>
-    <div class="toy-grid">
-
+    <!--Toy Cards-->
+    <div class="container-fluid d-flex justify-content-center flex-wrap align-items-center">
       <% @toys.each do |toy| %>
-        <div class="toy-grid-item">
+        <div class="toy-grid-item d-flex flex-column my-4 mx-3 justify-content-start">
           <div class="photo-container">
             <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
           </div>
@@ -17,8 +17,6 @@
             <p class="toy-text-class text-red" style="color: #808080; font-size: 16px;"><%= toy.description %></p>
         </div>
       <% end %>
-
     </div>
-
   </div>
 </div>
