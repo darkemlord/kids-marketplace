@@ -18,10 +18,12 @@ class ToysController < ApplicationController
 
   def create
     @toy = Toy.new(toy_params)
+    @toy.user = current_user
     authorize @toy
     if @toy.save
       redirect_to toy_path(@toy)
     else
+      raise
       render :new
     end
   end
@@ -34,6 +36,6 @@ class ToysController < ApplicationController
   end
 
   def toy_params
-    params.require(:toy).permit(:name, :description, :condition, :category)
+    params.require(:toy).permit(:name, :description, :condition, :category, :price, :photo)
   end
 end
