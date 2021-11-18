@@ -1,13 +1,13 @@
-.go-booking {
-  a {
-    text-decoration:none !important;
+a {
+  text-decoration:none !important;
+  color: white;
+  text-align: center;
+  // margin: 0 auto;
+
+  &:hover {
     color: white;
     text-align: center;
     margin: 0 auto;
-
-    :hover {
-      color: white;
-    }
   }
 }
 
