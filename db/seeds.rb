@@ -126,10 +126,10 @@ flickr_toy_collection_array = [
 
 address = ["Tokyo", "London", "Chiba", "Hiroshima"]
 # A user can have many toys, but a toy only has one owner (Ask Sheriff Woody for more info)
-gareth = User.create!(name: "gareth", email: "gareth@lewagon.com", password: "123456789" )
-anju = User.create!(name: "anju", email: "anju@lewagon.com", password: "123456789" )
-emanuel = User.create!(name: "emanuel", email: "emanuel@lewagon.com", password: "123456789" )
-louis = User.create!(name: "louis",  email: "louis@lewagon.com", password: "123456789" )
+gareth = User.create!(name: "gareth", email: "gareth@lewagon.com", password: "123456789", address: "Tokyo", child_age: 1)
+anju = User.create!(name: "anju", email: "anju@lewagon.com", password: "123456789", address: "Chiba", child_age: 4)
+emanuel = User.create!(name: "emanuel", email: "emanuel@lewagon.com", password: "123456789", address: "Saitama", child_age: 9 )
+louis = User.create!(name: "louis",  email: "louis@lewagon.com", password: "123456789", address: "Kanagawa", child_age: 5)
 
 users = [gareth, anju, emanuel, louis]
 
