@@ -44,7 +44,7 @@ flickr_toy_collection_array = [
   {
     item: "Thomas the Tank Engine",
     category: "toy trains",
-    description: "The classic Mac dog.",
+    description: "Chu chuuu! Collection of Thomas the Tank Engine trains.",
     condition: 0,
     flickr_image_url: "https://live.staticflickr.com/5303/5611079195_6b1866f739_k.jpg",
     flickr_imagepage_url: "https://www.flickr.com/photos/fsse-info/2826647650/in/photolist-5iMiSj-dTCsHd-9m8Y2E-yraPV9-9bDveP-LAVfhX-BZLG4m-7JNZ5c-dQtwX1-b1wTUR-pLbbiF-cMXzzb-9rc7S1-oRzt4E-bVKNub-7JSUwA-HHnEz7-dunx3p-RH8nBS-MZHNhm-24C5X4v-9BQjF2-9c2gfz-umPY3S-3yx7Gy-qU7KvR-cMXyRo-dsYuce-b6Rvzx-4Y9719-RvNS31-4aok5M-cMXzgY-CLRYLm-2SEUSH-M1uGQM-9xQfmK-uf4BU3-24tgU1V-8VXB6o-93QrKh-bbgKwr-9yBypy-dcDhRb-21g7yoy-WDva8R-aA2Rd6-XsrUxu-9r5U1V-9bGBCS",
@@ -60,7 +60,7 @@ flickr_toy_collection_array = [
   {
     item: "Buzz Lightyear",
     category: "plastic toys",
-    description: "Classic Buzz Lightyear with ",
+    description: "Classic Buzz Lightyear with Shotgun.",
     condition: 0,
     flickr_image_url: "https://live.staticflickr.com/4127/4979302833_a61d0f6b97_h.jpg",
     flickr_imagepage_url: "https://www.flickr.com/photos/razaonetwo/4979302833/in/photolist-dCvyXj-b5NC2H-dFd4xk-dWxPDR-y64wX-8jdm9J-NfbZNX-36xfo-91PE5i-TMYgBh-STm9aH-93UNRu-DTzik-7QRXiT-u9ueJB-91D5Mc-dWxGzM-9d7pgY-dWwJpk-pvzkVx-F2zkNh-dWDm2o-5YQQjA-WW78rt-dWxGYD-vVC7n-SZBhHZ-azXBMW-dcQLhe-brKHKu-9vo2u8-KsHia-3oLqB-91SKTL-kgFn7x-kGE7NM-de2fR4-GgJepW-8tUnMH-91WNiJ-oG98h9-dWDkEU-kgHhkf-8A1efR-eaPQey-vpSyB5-2edCfqA-dWwHLt-F1rTDu-91cKaD",
@@ -68,7 +68,7 @@ flickr_toy_collection_array = [
   {
     item: "Pile of Plush Toys",
     category: "soft toys",
-    description: "30 soft and fluffy animal toys",
+    description: "30 soft and fluffy animal toys.",
     condition: 0,
     flickr_image_url: "https://live.staticflickr.com/7858/46744201034_4b688241f8_k.jpg",
     flickr_imagepage_url: "https://www.flickr.com/photos/thedoglab/46744201034/in/photolist-dCvyXj-b5NC2H-dFd4xk-dWxPDR-y64wX-8jdm9J-NfbZNX-36xfo-91PE5i-TMYgBh-STm9aH-93UNRu-DTzik-7QRXiT-u9ueJB-91D5Mc-dWxGzM-9d7pgY-dWwJpk-pvzkVx-F2zkNh-dWDm2o-5YQQjA-WW78rt-dWxGYD-vVC7n-SZBhHZ-azXBMW-dcQLhe-brKHKu-9vo2u8-KsHia-3oLqB-91SKTL-kgFn7x-kGE7NM-de2fR4-GgJepW-8tUnMH-91WNiJ-oG98h9-dWDkEU-kgHhkf-8A1efR-eaPQey-vpSyB5-2edCfqA-dWwHLt-F1rTDu-91cKaD",
@@ -105,14 +105,31 @@ flickr_toy_collection_array = [
     flickr_image_url: "https://live.staticflickr.com/7422/14125947172_a424ade5d9_k.jpg",
     flickr_imagepage_url: "https://www.flickr.com/photos/120600995@N07/14125947172/in/photolist-nwgaXj-7TPurp-9GyZ3j-9Gw8up-ga3wRN-3D4QWD-BTxTb4-7sTBJF-9Gw6Fx-6Sz8bB-9Gw82Z-eCKb7Z-irv2cF-6SDa11-9PM7Sz-zpZX9a-rroTu9-rCXRpB-61NJnc-dRPNRY-9GyZZf-8iRwPh-9yujq6-zkp56a-9asJEo-wn9Cxi-5M1HRY-7ymiA7-b3UQYM-e2tX6c-thCDwb-qD6aib-3ck3gq-dnEW5o-qoN9aQ-pJA1RZ-fQmbxs-yWofZF-fxqpDx-pdTuwi-e8ht5L-qoWqtz-9yxjGm-qFnREP-qs2XEq-rNXoyi-eiHTY7-qrTGuR-qs2BF9-Nskbe",
   },
+  {
+    item: "toddler bike",
+    category: "outdoor toys",
+    description: "Bike riding fun for your little one.",
+    condition: 0,
+    flickr_image_url: "https://live.staticflickr.com/6099/6326625239_95afa5320b_k.jpg",
+    flickr_imagepage_url: "https://www.flickr.com/photos/hugojcardoso/6326625239/in/photolist-aD4Bgv-ZMgA5n-apMLGK-aRPkmn-oGU8Ww-byiFkz-awLRjf-7JRmf7-6irCu9-7iRrrj-q79JNS-gvvGM-Gqneuh-vH7WNx-22Ceodq-9wZDbr-rRitf4-dFiteW-252QNSR-6dCZXW-o7SumV-BjqSeA-Rm58Ng-oQwBa3-bVd1Jo-aB6P32-9wZFiM-V1eFzo-q79HNq-cfoPLU-SN6csP-ufCrrx-7fShqF-duQoCZ-abmdhU-aeu6qG-bfrHhx-dQceJ-dFiuGh-5tgvMN-c5m1w7-9wZCAM-Uaf3mW-5LEHtr-fAHFss-9eNnRj-9rcSKQ-5PBan-4Ntj5E-ufsuXK"
+  },
+  {
+    item: "clockwork robot toy",
+    category: "clockwork items",
+    description: "Beautiful vintage clockwork robot with menacing 'I'm going to take over the world' speech function.",
+    condition: 0,
+    flickr_image_url: "https://live.staticflickr.com/1692/24961001054_85a6cabd34_k.jpg",
+    flickr_imagepage_url: "https://www.flickr.com/photos/47064420@N03/24961001054/in/photolist-4K9cFX-frFtep-2BNLh-E2HDZ9-5q8iBS-NHr77H-qnq25P-22LFLHf-27LEWqw-aSG9Mr-qh6Bj-24NnTuQ-4aeeJr-detUPw-as76yj-VgWr4v-22GnXCm-9uQ3bq-7uA3kY-C6sWW-95Gwfd-cqVcR-oj3T4-TyfLbj-53GBMn-65sh3Q-7uA3md-8kds1M-KgBr7g-PHvQH5-9xHKfu-dWxPQa-DrQCG-aj6LhJ-cjFhbb-LywVv-HVRea-Tsye2U-RFGNCZ-5mFeT-22QnYQy-sb5pPd-aGwPDx-dcQJME-aGwMCH-dWDsrj-9n5eu3-PfQfxU-3pcdov-LAesK"
+  }
+
 ]
 
 address = ["Tokyo", "London", "Chiba", "Hiroshima"]
 # A user can have many toys, but a toy only has one owner (Ask Sheriff Woody for more info)
-gareth = User.create!(name: "gareth", email: "gareth@lewagon.com", password: "123456789" )
-anju = User.create!(name: "anju", email: "anju@lewagon.com", password: "123456789" )
-emanuel = User.create!(name: "emanuel", email: "emanuel@lewagon.com", password: "123456789" )
-louis = User.create!(name: "louis",  email: "louis@lewagon.com", password: "123456789" )
+gareth = User.create!(name: "gareth", email: "gareth@lewagon.com", password: "123456789", address: "Tokyo", child_age: 1)
+anju = User.create!(name: "anju", email: "anju@lewagon.com", password: "123456789", address: "Chiba", child_age: 4)
+emanuel = User.create!(name: "emanuel", email: "emanuel@lewagon.com", password: "123456789", address: "Saitama", child_age: 9 )
+louis = User.create!(name: "louis",  email: "louis@lewagon.com", password: "123456789", address: "Kanagawa", child_age: 5)
 
 users = [gareth, anju, emanuel, louis]
 

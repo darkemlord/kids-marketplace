@@ -1,9 +1,16 @@
-<div class="wrapper" style="align-content: center;">
-  <div class="toy-grid-container">
-    <h1>All Our Toys And Kids Stuff</h1>
-    <h2><%= @toys.all.count %> items available around the world.</h2>
+<div class="responsive container d-flex flex-column justify-content-between">
+  <div class="profile-top">
+      <%= image_tag "https://avatars.githubusercontent.com/u/82207189?v=4" %>
+    <h1><%= @user.name.upcase %><h1>
+    <p>Address: <%= @user.address %></p>
+    <p>Kid's age: <%= @user.child_age %></p>
+
+
+
+<div class="border-bottom"></div>
+<h2>Toys</h2>
     <div class="toy-grid">
-      <% @toys.each do |toy| %>
+      <% @user.toys.each do |toy| %>
         <div class="toy-grid__item">
           <%= link_to toy_path(toy.id) do %>
             <div class="toy-grid__item-photo-container">
@@ -16,8 +23,6 @@
             </div>
           <% end %>
         </div>
-
-      <% end %>
-    </div>
-  </div>
+<% end %>
+</div>
 </div>

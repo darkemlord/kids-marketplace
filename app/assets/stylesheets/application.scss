@@ -12,11 +12,14 @@
 @import "components/index";
 @import "pages/index";
 @import "toys/index";
+@import "users/show";
 
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Genos:wght@300&display=swap');
 
-
+body{
+  background-image: url('background.jpg');
+}
 
 h1, h2, h3{
  font-family: 'Architects Daughter', cursive;
@@ -25,6 +28,19 @@ h1, h2, h3{
 p, a{
   font-family: 'Architects Daughter', cursive;
   font-family: 'Genos', sans-serif;
+}
+
+
+.km-font-main {
+  font-family: 'Genos', sans-serif;
+}
+
+.km-text-dark {
+  color: #1B2631;
+}
+
+.km-text-price {
+  color: #D68910;
 }
 
 .page-buttons {
