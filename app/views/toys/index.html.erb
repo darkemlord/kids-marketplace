@@ -3,27 +3,25 @@
     <h1>All Our Toys And Kids Stuff</h1>
     <h2><%= @toys.all.count %> items available around the world.</h2>
     <div class="toy-grid">
-      <% @toys.each do |toy| %>
+      <% @available_toys.each do |toy| %>
         <div class="toy-grid__item">
           <%= link_to toy_path(toy.id) do %>
             <div class="toy-grid__item-photo-container">
+            <% if toy.photo.attached? %>
               <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
+              <% else %>
+              <%= image_tag 'background.jpg', crop: :fill, class: "photo-class" %>
+              <% end %>
             </div>
             <div class="toy-grid__item-text-container">
               <%= link_to toy.name, toy_path(toy.id), class: "toy-text--name km-text-dark km-font-main" %>
               <p class="toy-text--description km-text-dark km-font-main"><%= toy.description %></p>
               <p class="toy-text--price km-text-dark km-font-main">Rental: <strong class="km-text-price"><span>¥<%= toy.price %></strong></span>/week</p>
-              <p class="toy-text--price km-text-dark km-font-main"><%= DateTime.now.to_date %></p>
             </div>
           <% end %>
         </div>
-
-      <% end %>
-
-      <% @available_toys.each do |toy| %>
-        <p><%= toy.name %></p>
       <% end %>
     </div>
-
   </div>
+
 </div>

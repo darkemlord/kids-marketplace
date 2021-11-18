@@ -8,6 +8,13 @@
 require "open-uri"
 require_relative "flickr_toy_collection"
 
+def dotdotdot
+  3.times do
+    print "."
+    sleep 0.3
+  end
+end
+
 puts "Deleting everything...."
 Toy.destroy_all
 puts "Destroyed toys."
@@ -124,56 +131,97 @@ flickr_toy_collection_array = [
 
 ]
 
-address = ["Tokyo", "London", "Chiba", "Hiroshima"]
-# A user can have many toys, but a toy only has one owner (Ask Sheriff Woody for more info)
-gareth = User.create!(name: "gareth", email: "gareth@lewagon.com", password: "123456789" )
-anju = User.create!(name: "anju", email: "anju@lewagon.com", password: "123456789" )
-emanuel = User.create!(name: "emanuel", email: "emanuel@lewagon.com", password: "123456789" )
-louis = User.create!(name: "louis",  email: "louis@lewagon.com", password: "123456789" )
+puts "creating users"
+dotdotdot
+puts ""
+address = [
+  {
+    place: "Tokyo",
+    geolocation: [139.77, 35.68]
+  },
+  {
+    place: "London",
+    geolocation: [-0.12764739999999997, 51.507321899999994]
+  },
+  {
+    place: "Chiba",
+    geolocation: [140.12333, 35.605]
+  },
+  {
+    place: "Hiroshima",
+    geolocation: [132.75, 34.43333]
+  }
+]
+
+louis = User.create!(name: "louis",  email: "louis@lewagon.com", password: "123456789", address: address[0][:place], child_age: 5, latitude: address[0][:geolocation][0], longitude: address[0][:geolocation][1])
+puts "Louis. place: #{louis.address} latitude: #{louis.latitude} longitude: #{louis.longitude}"
+gareth = User.create!(name: "gareth", email: "gareth@lewagon.com", password: "123456789", address: address[1][:place], child_age: 1, latitude: address[1][:geolocation][0], longitude: address[1][:geolocation][1])
+puts "Gareth. place: #{gareth.address} latitude: #{gareth.latitude} longitude: #{gareth.longitude}"
+emanuel = User.create!(name: "emanuel", email: "emanuel@lewagon.com", password: "123456789", address: address[2][:place], child_age: 9, latitude: address[2][:geolocation][0], longitude: address[2][:geolocation][1] )
+puts "Emanuel. place: #{emanuel.address} latitude: #{emanuel.latitude} longitude: #{emanuel.longitude}"
+anju = User.create!(name: "anju", email: "anju@lewagon.com", password: "123456789", address: address[3][:place], child_age: 4, latitude: address[3][:geolocation][0], longitude: address[3][:geolocation][1])
+puts "Anju. place: #{anju.address} latitude: #{anju.latitude} longitude: #{anju.longitude}"
 
 users = [gareth, anju, emanuel, louis]
 
-puts "created users"
+puts "created 4 users"
 
-# toy_name = ["Sword", "Sponge Bob Doll", "Sailormoon doll", "Princess doll", "Mini race car", "wig"]
-
-puts "creating toys"
+puts "creating toys. This is going to take a bit of time because of the url grabbing and cloudinary."
+dotdotdot
+puts ""
 flickr_toy_collection_array.each_with_index do |item, index|
-toy_image_file = URI.open(item[:flickr_image_url])
-image_filename = item[:item].gsub(" ", "") + item[:flickr_image_url][35..44]
-
-# category = ["music", "puzzle", "soft toy", "train", "car", "drawing"]
-# description = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", nil ]
+  toy_image_file = URI.open(item[:flickr_image_url])
+  image_filename = item[:item].gsub(" ", "") + item[:flickr_image_url][35..44]
 
   toy = Toy.create!(
-    user:users.sample,
+    user:users.sample, # random owner # A user can have many toys, but a toy only has one owner (Ask Sheriff Woody for more info)
     name:item[:item],
     description:item[:description],
     category:item[:category],
     condition:rand(0..2),
-    dates_available:Date.today,
-    price:rand(10..1000),
+    # dates_available:Date.today,
+    price:rand(1..10) * 100, # price rounded to 100
     photo_url:item[:flickr_image_url])
-  # adding the flickr photo-id to filename here to avoid duplicate image filenames
+
   toy.photo.attach(io: toy_image_file, filename: item[:item].gsub(" ", ""), content_type: 'image/jpg')
-  puts "Toy #{index}: #{item[:item]}. Price: #{toy.price}. Cloudinary image file: #{image_filename}"
+  puts "Toy id: #{toy.id} #{item[:item]}. Price: #{toy.price}. Toy Owner: #{toy.user.name}"
+
 end
 
-puts "created #{Toy.count} toys. :) and users."
+puts "created #{Toy.count} toys."
 
 puts "creating bookings"
+puts "booking 3 toys to test the availability filter."
+dotdotdot
+puts ""
+
 today = DateTime.now.to_date
-#today.to_s # "2009-08-31"
-seven_days_from_now = (today + 7).to_date
-5.times do
-  Booking.create(
-    start_date: today,
-    end_date: seven_days_from_now,
-    delivery_option: 'deliver',
-    user_id: rand(1..3),
-    toy_id: rand(1..10)
+
+booking_before_availability_window = [(today - 14).to_date, (today - 9).to_date]
+booking_after_availability_window = [(today + 14).to_date, (today + 19).to_date]
+booking_within_availability_window  = [(today + 3).to_date, (today + 12).to_date]
+
+availability_tester = [booking_before_availability_window, booking_after_availability_window, booking_within_availability_window]
+availability_notes = [
+  "IS AVAILABLE: A booking made for 2 weeks ago for 5 days: fnishes before the start of the 1 week availability window",
+  "IS AVAILABLE: A booking made for 2 weeks in the future for 5 days: starts after the end of the availability window",
+  "IS NOT AVAILABLE: A booking made for 3 days from now for 8 days:"
+]
+i = 0
+while i < 3 do
+  random_booking_creator = users[rand(0..3)]
+  booking = Booking.create!(
+    user: random_booking_creator, # random booking person
+    start_date: availability_tester[i][0],
+    end_date: availability_tester[i][1],
+    delivery_option: 1,
+    user_id: random_booking_creator.id, # random booking person
+    toy_id: Toy.all.sample.id # random toy to be booked
   )
-  puts "User #{index}: #{item[:item]}. Price: #{toy.price}. Cloudinary image file: #{image_filename}"
+  puts availability_notes[i]
+  # puts "#{Toy.all.sample.id}"
+  puts "Booking id: #{booking.id} #{booking.toy.name} Toy owner: #{booking.toy.user.name} Booked by: #{booking.user.name} Booked from: #{booking.start_date}, until: #{booking.end_date}"
+  i += 1
 end
 
 puts "bookings created"
