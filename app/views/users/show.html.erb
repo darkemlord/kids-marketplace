@@ -1,0 +1,83 @@
+<div class="responsive container d-flex flex-column justify-content-between">
+  <div class="profile-top">
+    <%= image_tag "https://avatars.githubusercontent.com/u/82207189?v=4", class: "avatar" %>
+    <h1><%= @user.name %><h1>
+  </div>
+
+
+
+
+
+
+    <% if false %>
+    <div class="show-title">
+      <div>
+        <h1><%= @toy.name %></h1>
+        <p>Location<%# @user_id.location %></p>
+      </div>
+      <p>★★★<%# @toy.rating %></p>
+    </div>
+
+    <div class="border-bottom"></div>
+
+    <div class="toy-details">
+      <div class="detail">
+        <h3>Description:</h3>
+        <% if @toy.description != nil %>
+          <p><%= @toy.description %></p>
+        <% else %>
+          <p>No description to show</p>
+        <% end %>
+      </div>
+
+      <div class="detail">
+        <h3>Category:</h3>
+        <% if @toy.category != nil %>
+          <p><%= @toy.category.capitalize %></p>
+        <% else %>
+          <p>Nil</p>
+        <% end %>
+      </div>
+
+      <div class="detail">
+      <h3>Condition:</h3>
+        <% if @toy.condition != nil %>
+          <p><%= @toy.condition.capitalize %></p>
+        <% else %>
+          <p>Nil</p>
+        <% end %>
+      </div>
+
+      <div class="border-bottom"></div>
+      <h3><%= @toy.user.name %></h3>
+
+      <div class="detail">
+      <h3>Location:</h3>
+        <% if @toy.user.address != nil %>
+          <p><%= @toy.user.address.capitalize %></p>
+        <% else %>
+          <p>Nil</p>
+        <% end %>
+      </div>
+
+      <div class="detail">
+      <h3>Child's age:</h3>
+        <% if @toy.user.child_age != nil %>
+          <p><%= @toy.user.child_age %></p>
+        <% else %>
+          <p>Nil</p>
+        <% end %>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="fixed-bottom">
+  <div class="go-booking">
+    <h2>¥<%= @toy.price %><span style="font-size:18px">/ week</span></h2>
+    <div class="btn btn-primary"><%= link_to 'Book Now', new_toy_booking_path(@toy) %></div>
+  </div>
+</div>
+<% end %>
