@@ -23,7 +23,9 @@
             <%# <%= render "approval_buttons", booking: booking %>
           </div>
         </div>
+        <% if policy(booking).update? %>
         <%= render "approval_buttons", booking: booking %>
+        <% end %>
       </div>
     </div>
   <% end %>
