@@ -1,8 +1,8 @@
 <div class="responsive container d-flex flex-column justify-content-between">
+  <% if @toy.photo.attached? %>
   <%= cl_image_tag @toy.photo.key, class:'photo-class'%>
-  <% if false %>
-    <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_path('list_background.jpg') %>)">
-    </div>
+  <% else %>
+  <%= image_tag 'background2.jpg', class:'photo-class'%>
   <% end %>
   <div class="show-title">
     <div>
