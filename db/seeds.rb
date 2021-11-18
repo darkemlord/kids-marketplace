@@ -162,14 +162,18 @@ end
 puts "created #{Toy.count} toys. :) and users."
 
 puts "creating bookings"
-10.times do
+today = DateTime.now.to_date
+#today.to_s # "2009-08-31"
+seven_days_from_now = (today + 7).to_date
+5.times do
   Booking.create(
-    start_date: Date.today,
-    end_date: Date.today,
+    start_date: today,
+    end_date: seven_days_from_now,
     delivery_option: 'deliver',
     user_id: rand(1..3),
     toy_id: rand(1..10)
   )
+  puts "User #{index}: #{item[:item]}. Price: #{toy.price}. Cloudinary image file: #{image_filename}"
 end
 
 puts "bookings created"

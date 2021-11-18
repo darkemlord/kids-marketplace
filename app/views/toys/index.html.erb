@@ -13,12 +13,16 @@
               <%= link_to toy.name, toy_path(toy.id), class: "toy-text--name km-text-dark km-font-main" %>
               <p class="toy-text--description km-text-dark km-font-main"><%= toy.description %></p>
               <p class="toy-text--price km-text-dark km-font-main">Rental: <strong class="km-text-price"><span>¥<%= toy.price %></strong></span>/week</p>
+              <p class="toy-text--price km-text-dark km-font-main"><%= DateTime.now.to_date %></p>
             </div>
           <% end %>
         </div>
 
       <% end %>
 
+      <% @available_toys.each do |toy| %>
+        <p><%= toy.name %></p>
+      <% end %>
     </div>
 
   </div>

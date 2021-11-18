@@ -12,8 +12,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    #puts "*****************" + @booking.start_date
+    #raise
     @booking.toy = Toy.find(params[:toy_id])
     @booking.user = current_user
+
     authorize @booking
     if @booking.save
       redirect_to bookings_path # we need to update this once we have the root for booking index
