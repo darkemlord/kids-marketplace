@@ -1,9 +1,19 @@
 <div class="responsive container d-flex flex-column justify-content-between">
   <div class="profile-top">
-    <%= image_tag "https://avatars.githubusercontent.com/u/82207189?v=4", class: "avatar" %>
-    <h1><%= @user.name %><h1>
+      <%= image_tag "https://avatars.githubusercontent.com/u/82207189?v=4" %>
+    <h1><%= @user.name.upcase %><h1>
   </div>
 
+  <div class="toy-grid-item">
+    <% @user.toys.each do |toy| %>
+    <div class="photo-container">
+      <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
+    </div>
+    <%= link_to toy.name, toy_path(toy) %>
+    <p class="toy-text-class text-red">Rental: $<%= toy.price %></p>
+    <p class="toy-text-class text-red" style="color: #808080; font-size: 16px;"><%= toy.description %></p>
+<% end %>
+  </div>
 
 
 
@@ -80,4 +90,9 @@
     <div class="btn btn-primary"><%= link_to 'Book Now', new_toy_booking_path(@toy) %></div>
   </div>
 </div>
+
+
+, method: :delete, data: { confirm: "Do you want to delete #{bookmark.movie.title}" } do %>
+          <i class="far fa-trash-alt"></i>
+
 <% end %>
