@@ -5,7 +5,7 @@ class Toy < ApplicationRecord
 
   validates :name, presence: true
   validates :category, presence: true
-  validates :dates_available, presence: true
+  # validates :dates_available, presence: true
   validates :price, presence: true
   validates :availability, presence: true
   enum condition: { "Brand new": 0, "Damaged": 1, "Used": 2 }
