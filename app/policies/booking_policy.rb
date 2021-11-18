@@ -1,7 +1,7 @@
 class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      user.bookings
     end
   end
 
@@ -10,6 +10,6 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    return true
+    user == record.toy.user
   end
 end
