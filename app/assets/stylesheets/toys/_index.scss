@@ -13,6 +13,7 @@
   font-weight: bold;
   line-height: 12pt;
 }
+}
 
 
 
@@ -28,6 +29,7 @@
 
 .photo-container {
   height: 300px;
+}
 
 .toy-text--description {
   font-size: 16px;
@@ -69,6 +71,7 @@
   display: block;
   background-color: #fff;
   padding-bottom: 50px;
+}
 
   .toy-grid {
     display: grid;
@@ -111,19 +114,19 @@
     padding-right: 0px;
 
   }
-
-
 }
 
 
 @media (max-width: 600px) {
-
+  .toy-grid{
+    padding-left: 10;
+  }
+}
 /* 320px — 480px: Mobile devices. */
 /* 481px — 768px: iPads, Tablets. */
 /* 769px — 1024px: Small screens, laptops. */
 /* 1025px — 1200px: Desktops, large screens. */
 /* 1201px and more — Extra large screens, T */
-
 /* laptops */
 @media(max-width: 1200px) {
   .toy-grid-container {
@@ -217,6 +220,4 @@
   .toy-text--name {
     font-size: 16px;
   }
-
-
 }
