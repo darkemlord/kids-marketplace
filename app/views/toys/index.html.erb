@@ -2,8 +2,16 @@
   <div class="toy-grid-container">
     <h1>All Our Toys And Kids Stuff</h1>
     <h2><%= @toys.all.count %> items available around the world.</h2>
+    <%= form_tag toys_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a toy"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
     <div class="toy-grid">
-      <% @available_toys.each do |toy| %>
+      <% @toys.each do |toy| %>
         <div class="toy-grid__item">
           <%= link_to toy_path(toy.id) do %>
             <div class="toy-grid__item-photo-container">

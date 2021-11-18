@@ -10,6 +10,13 @@ class Toy < ApplicationRecord
   validates :availability, presence: true
   enum condition: { "Brand new": 0, "Damaged": 1, "Used": 2 }
 
+  #include PgSearch::Model
+  #pg_search_scope :search_by_name_and_description,
+  #  against: [ :name, :description ],
+  #  using: {
+  #    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  #  }
+#
   # Querying booking for availability
   def self.unavailable(today, seven_days_from_now)
     # results = ActiveRecord::Base.connection.execute("SELECT * FROM bookings WHERE (bookings.toy_id = 164)")
