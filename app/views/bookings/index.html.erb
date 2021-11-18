@@ -1,66 +1,56 @@
-<div class="container">
+<div class="container align-items-center">
   <div class="title">
     <h1 class="m-3 text-center">Your Bookings</h1>
-   </div>
+  </div>
   <div class="product-info">
-  <% @bookings.each do |booking| %>
-    <div class="card-product m-2">
-      <div class="card-top-bottom-joiner">
-        <div class="card-content">
-          <div class="d-flex align-items-center">
-            <%= cl_image_tag booking.toy.photo.key, height: 600, width: 800, crop: :fill %>
-            <div class="card-product-infos">
-              <h2><%= link_to booking.toy.name, toy_path(booking.toy)%></h2>
-              <p><%= booking.toy.user.email %></p>
-              <% if booking.approval_status == "approved" %>
-                <p class ="booking-status" style="color:#008000"><%= booking.approval_status %></p>
-              <% elsif booking.approval_status == "pending" %>
-                <p class ="booking-status" style="color:#FFA500"><%= booking.approval_status %></p>
-              <% elsif booking.approval_status == "denied" %>
-                <p class ="booking-status" style="color:#FF0000"><%= booking.approval_status %></p>
-              <% end %>
-            </div>
-            <%# <%= render "approval_buttons", booking: booking %>
-          </div>
+    <% @bookings.each do |booking| %>
+      <div class="card-product mt-2">
+        <%= cl_image_tag booking.toy.photo.key, height: 600, width: 800, crop: :fill %>
+        <div class="card-product-infos">
+          <h2><%= link_to booking.toy.name, toy_path(booking.toy)%></h2>
+          <p><%= booking.toy.user.email %></p>
+          <% if booking.approval_status == "approved" %>
+            <p class ="booking-status" style="color:#008000"><%= booking.approval_status %></p>
+          <% elsif booking.approval_status == "pending" %>
+            <p class ="booking-status" style="color:#FFA500"><%= booking.approval_status %></p>
+          <% elsif booking.approval_status == "denied" %>
+            <p class ="booking-status" style="color:#FF0000"><%= booking.approval_status %></p>
+          <% end %>
         </div>
-        <% if policy(booking).update? %>
-        <%= render "approval_buttons", booking: booking %>
-        <% end %>
       </div>
-    </div>
-  <% end %>
-
-  <!--BOOKINGS AS A OWNER -->
-
+      <% if policy(booking).update? %>
+        <%= render "approval_buttons", booking: booking %>
+      <% end %>
+    <% end %>
+    <!--BOOKINGS AS A OWNER -->
     <div class="title">
-    <h1 class="m-3 text-center">Your Bookings request</h1>
-   </div>
-    <% @bookings_as_owner.each do |booking| %>
-    <div class="card-product m-2">
-      <div class="card-top-bottom-joiner">
-        <div class="card-content">
-          <div class="d-flex align-items-center">
-            <%= cl_image_tag booking.toy.photo.key, height: 600, width: 800, crop: :fill %>
-            <div class="card-product-infos">
-              <h2><%= link_to booking.toy.name, toy_path(booking.toy)%></h2>
-              <p><%= booking.toy.user.email %></p>
-              <% if booking.approval_status == "approved" %>
-                <p class ="booking-status" style="color:#008000"><%= booking.approval_status %></p>
-              <% elsif booking.approval_status == "pending" %>
-                <p class ="booking-status" style="color:#FFA500"><%= booking.approval_status %></p>
-              <% elsif booking.approval_status == "denied" %>
-                <p class ="booking-status" style="color:#FF0000"><%= booking.approval_status %></p>
-              <% end %>
-            </div>
-            <%# <%= render "approval_buttons", booking: booking %>
-          </div>
-        </div>
-        <% if policy(booking).update? %>
-        <%= render "approval_buttons", booking: booking %>
-        <% end %>
-      </div>
+      <h1 class="m-3 text-center">Your Bookings request</h1>
     </div>
-  <% end %>
-
-  <%= link_to "Return to Toys", toys_path, class: "btn btn-dark mt-2"  %>
-</div>
+    <% @bookings_as_owner.each do |booking| %>
+      <div class="card-product mt-2">
+        <%# <div class="card-top-bottom-joiner"> %>
+        <%# <div class="card-content">
+            <div class="d-flex align-items-center"> %>
+        <%= cl_image_tag booking.toy.photo.key, height: 600, width: 800, crop: :fill %>
+        <div class="card-product-infos">
+          <h2><%= link_to booking.toy.name, toy_path(booking.toy)%></h2>
+          <p><%= booking.toy.user.email %></p>
+          <% if booking.approval_status == "approved" %>
+            <p class ="booking-status" style="color:#008000"><%= booking.approval_status %></p>
+          <% elsif booking.approval_status == "pending" %>
+            <p class ="booking-status" style="color:#FFA500"><%= booking.approval_status %></p>
+          <% elsif booking.approval_status == "denied" %>
+            <p class ="booking-status" style="color:#FF0000"><%= booking.approval_status %></p>
+          <% end %>
+        </div>
+        <%# <%= render "approval_buttons", booking: booking %>
+        <%# </div> %>
+        <%# </div> %>
+        <%# </div> %>
+      </div>
+      <% if policy(booking).update? %>
+        <%= render "approval_buttons", booking: booking %>
+      <% end %>
+    <% end %>
+    <%= link_to "Return to Toys", toys_path, class: "btn btn-dark mt-2"  %>
+  </div>
