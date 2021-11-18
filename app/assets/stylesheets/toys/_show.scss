@@ -1,13 +1,16 @@
-a {
-  text-decoration:none !important;
-  color: white;
-  text-align: center;
-  margin: 0 auto;
-
-  :hover {
+.go-booking {
+  a {
+    text-decoration:none !important;
     color: white;
+    text-align: center;
+    margin: 0 auto;
+
+    :hover {
+      color: white;
+    }
   }
 }
+
 
 .toy-info {
   overflow: hidden;
@@ -50,6 +53,11 @@ a {
 
 .detail {
   display: flex;
+    a {
+    text-decoration:none !important;
+    text-align: center;
+    margin: 0 auto;
+  }
 
 }
 

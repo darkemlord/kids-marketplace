@@ -1,7 +1,15 @@
 @import "../toys/index";
 
 p {
-  font-size: 18expx;
+  font-size: 18px;
+}
+
+h1{
+  text-align: center;
+  }
+
+h2 {
+  text-align: center;
 }
 
 .profile-top {
@@ -9,10 +17,6 @@ p {
   height: 300px;
   width: 300px;
   object-fit: cover;
-  }
-
-  h1 {
-    text-align: center;
   }
 
   margin-left: auto;
