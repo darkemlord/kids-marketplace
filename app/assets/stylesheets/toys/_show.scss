@@ -4,10 +4,13 @@ a {
   text-align: center;
   // margin: 0 auto;
 
-  :hover {
+  &:hover {
     color: white;
+    text-align: center;
+    margin: 0 auto;
   }
 }
+
 
 .toy-info {
   overflow: hidden;
@@ -50,6 +53,11 @@ a {
 
 .detail {
   display: flex;
+    a {
+    text-decoration:none !important;
+    text-align: center;
+    margin: 0 auto;
+  }
 
 }
 

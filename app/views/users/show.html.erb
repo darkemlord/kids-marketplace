@@ -1,0 +1,28 @@
+<div class="responsive container d-flex flex-column justify-content-between">
+  <div class="profile-top">
+      <%= image_tag "https://avatars.githubusercontent.com/u/82207189?v=4" %>
+    <h1><%= @user.name.upcase %><h1>
+    <p>Address: <%= @user.address %></p>
+    <p>Kid's age: <%= @user.child_age %></p>
+
+
+
+<div class="border-bottom"></div>
+<h2>Toys</h2>
+    <div class="toy-grid">
+      <% @user.toys.each do |toy| %>
+        <div class="toy-grid__item">
+          <%= link_to toy_path(toy.id) do %>
+            <div class="toy-grid__item-photo-container">
+              <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
+            </div>
+            <div class="toy-grid__item-text-container">
+              <%= link_to toy.name, toy_path(toy.id), class: "toy-text--name km-text-dark km-font-main" %>
+              <p class="toy-text--description km-text-dark km-font-main"><%= toy.description %></p>
+              <p class="toy-text--price km-text-dark km-font-main">Rental: <strong class="km-text-price"><span>¥<%= toy.price %></strong></span>/week</p>
+            </div>
+          <% end %>
+        </div>
+<% end %>
+</div>
+</div>
