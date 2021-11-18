@@ -1,26 +1,19 @@
 @import "show";
 
+
 .toy-grid-container {
+/* toy index text */
+.toy-text-class {
     width: 100%;
-    padding-top: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding: 0 8%;
-    overflow: hidden;
-    position: relative;
-    display: block;
-    background-color: transparent;
-    padding-bottom: 50px;
+    color:#808080;
+  }
+
+.toy-text--name {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 12pt;
 }
 
-.toy-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: 1fr;
-  grid-gap: 30px;
-   border: 0px solid blue;
-  padding: 0px;
-}
 
 
 .toy-grid-item {
@@ -35,6 +28,17 @@
 
 .photo-container {
   height: 300px;
+
+.toy-text--description {
+  font-size: 16px;
+  line-height: 12pt;
+  margin-bottom: 8px;
+}
+
+.toy-text--price {
+  font-size: 24px;
+  line-height: 12pt;
+
   margin-bottom: 8px;
   img{
     object-fit: fill;
@@ -44,45 +48,175 @@
 
 
 
+
 .photo-class {
   object-fit: cover;
   width:100%;
   height: 300px;
 }
 
-.toy-text-class {
+
+/* toy/item grid */
+.toy-grid-container {
+  max-width: 1580px;
   width: 100%;
-  color:#808080;
-  font-size: 24px;
-  font-weight: bold;
-}
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding: 0 8%;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  background-color: #fff;
+  padding-bottom: 50px;
 
-.text-red {
-  color: #000;
-}
+  .toy-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);/* repeat(number of columns/rows, the column width we want); fr is fraction*/
+    grid-auto-rows: 1fr;
+    grid-gap: 30px;
+    border: 0px solid blue;
+    padding: 0px;
+  }
 
-.text-blue {
-  color: blue;
-}
+  .toy-grid__item {
+    border-radius: 5px;
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    padding: 5px;
+    transition: 0.3s;
+  }
+
 
 @media(max-width: 700px) {
-  .toy-grid-item {
-    width: 350px;
-    height: 500px;
+
+  .toy-grid__item:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.5);
+    cursor: pointer;
   }
-}
+
+  .toy-grid__item-photo-container {
+    overflow:hidden;
+    margin-bottom: 8px;
+  }
+
+  .photo-class {
+    object-fit: cover;
+    width:100%;
+    height: 300px;
+  }
+
+  .toy-grid__item-text-container {
+    padding-left: 0px;
+    padding-right: 0px;
+
+  }
 
 
-@media (max-width: 880px) {
-  .toy-grid-container {
-    width: 100%;
-    float: left;
 }
-}
+
 
 @media (max-width: 600px) {
-  .toy-grid-item {
-    width: 350px;
-    height: 450px;
+
+/* 320px — 480px: Mobile devices. */
+/* 481px — 768px: iPads, Tablets. */
+/* 769px — 1024px: Small screens, laptops. */
+/* 1025px — 1200px: Desktops, large screens. */
+/* 1201px and more — Extra large screens, T */
+
+/* laptops */
+@media(max-width: 1200px) {
+  .toy-grid-container {
+    padding-left: 10px;
+    padding-right: 10px;
+    .toy-grid {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+    .toy-grid__item-photo-container {
+      height: 200px;
+      overflow:hidden;
+      margin-bottom: 4px;
+    }
+
+    .photo-class {
+      object-fit: cover;
+      width:100%;
+      height: 200px;
+    }
+
   }
+}
+
+/* tablets */
+@media(max-width: 768px) {
+    .toy-grid-container {
+    padding-left: 5px;
+    padding-right: 5px;
+    .toy-grid {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+    .toy-grid__item-photo-container {
+      height: 200px;
+      overflow:hidden;
+      margin-bottom: 4px;
+    }
+
+    .photo-class {
+      object-fit: cover;
+      width:100%;
+      height: 200px;
+    }
+
+  }
+
+  .toy-text--name {
+    font-size: 20px;
+  }
+  .toy-text--price {
+  font-size: 16px;
+  }
+}
+
+/* smartphones */
+@media(max-width: 480px) {
+  .toy-grid-container {
+    padding-left: 5px;
+    padding-right: 5px;
+    .toy-grid {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+    .toy-grid__item-photo-container {
+      height: 200px;
+      overflow:hidden;
+      margin-bottom: 4px;
+    }
+
+    .photo-class {
+      object-fit: cover;
+      width:100%;
+      height: 200px;
+    }
+
+    .toy-item-text {
+      width: 100%;
+      color:#808080;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .toy-text--name {
+    font-size: 16px;
+  }
+
+
 }

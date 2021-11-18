@@ -1,21 +1,22 @@
-
-
-
-
-<div class="wrapper" style="">
+<div class="wrapper" style="align-content: center;">
   <div class="toy-grid-container">
     <h1>All Our Toys And Kids Stuff</h1>
-    <!--Toy Cards-->
-    <div class="container-fluid d-flex justify-content-center flex-wrap align-items-center">
+    <h2><%= @toys.all.count %> items available around the world.</h2>
+    <div class="toy-grid">
       <% @toys.each do |toy| %>
-        <div class="toy-grid-item d-flex flex-column my-4 mx-3 justify-content-start">
-          <div class="photo-container">
-            <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
-          </div>
-            <%= link_to toy.name, toy_path(toy.id), class: "toy-text-class text-blue" %>
-            <p class="toy-text-class text-red">Rental: $<%= toy.price %></p>
-            <p class="toy-text-class text-red" style="color: #808080; font-size: 16px;"><%= toy.description %></p>
+        <div class="toy-grid__item">
+          <%= link_to toy_path(toy.id) do %>
+            <div class="toy-grid__item-photo-container">
+              <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
+            </div>
+            <div class="toy-grid__item-text-container">
+              <%= link_to toy.name, toy_path(toy.id), class: "toy-text--name km-text-dark km-font-main" %>
+              <p class="toy-text--description km-text-dark km-font-main"><%= toy.description %></p>
+              <p class="toy-text--price km-text-dark km-font-main">Rental: <strong class="km-text-price"><span>¥<%= toy.price %></strong></span>/week</p>
+            </div>
+          <% end %>
         </div>
+
       <% end %>
     </div>
   </div>

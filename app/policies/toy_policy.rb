@@ -9,4 +9,8 @@ class ToyPolicy < ApplicationPolicy
     return true
   end
 
+  def new?
+    return true
+  end
+
 end
