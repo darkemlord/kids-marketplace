@@ -12,3 +12,17 @@
 @import "components/index";
 @import "pages/index";
 @import "toys/index";
+
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Genos:wght@300&display=swap');
+
+
+
+h1, h2, h3{
+ font-family: 'Architects Daughter', cursive;
+}
+
+p, a{
+  font-family: 'Architects Daughter', cursive;
+  font-family: 'Genos', sans-serif;
+}

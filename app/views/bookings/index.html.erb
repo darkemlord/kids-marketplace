@@ -1,37 +1,31 @@
 <div class="container">
   <div class="title">
     <h1 class="m-3 text-center">Your Bookings</h1>
-  </div>
-
+   </div>
+  <div class="product-info">
   <% @bookings.each do |booking| %>
-  <div class="card-product m-2">
-    <%= cl_image_tag booking.toy.photo.key, height: 300, width: 400, crop: :fill %>
-      <div class="card-product-infos">
-        <h2><%= link_to booking.toy.name, toy_path(booking.toy)%></h2>
-        <p><%= booking.toy.user.email %></p>
-        <% if booking.approval_status == "approved" %>
-          <p class ="booking-status" style="color:#008000"><%= booking.approval_status %></p>
-        <% elsif booking.approval_status == "pending" %>
-          <p class ="booking-status" style="color:#FFA500"><%= booking.approval_status %></p>
-        <% elsif booking.approval_status == "denied" %>
-          <p class ="booking-status" style="color:#FF0000"><%= booking.approval_status %></p>
-        <% end %>
+    <div class="card-product m-2">
+      <div class="card-top-bottom-joiner">
+        <div class="card-content">
+          <div class="d-flex align-items-center">
+            <%= cl_image_tag booking.toy.photo.key, height: 600, width: 800, crop: :fill %>
+            <div class="card-product-infos">
+              <h2><%= link_to booking.toy.name, toy_path(booking.toy)%></h2>
+              <p><%= booking.toy.user.email %></p>
+              <% if booking.approval_status == "approved" %>
+                <p class ="booking-status" style="color:#008000"><%= booking.approval_status %></p>
+              <% elsif booking.approval_status == "pending" %>
+                <p class ="booking-status" style="color:#FFA500"><%= booking.approval_status %></p>
+              <% elsif booking.approval_status == "denied" %>
+                <p class ="booking-status" style="color:#FF0000"><%= booking.approval_status %></p>
+              <% end %>
+            </div>
+            <%# <%= render "approval_buttons", booking: booking %>
+          </div>
+        </div>
+        <%= render "approval_buttons", booking: booking %>
       </div>
-
-      <% if booking.pending? %>
-        <%= simple_form_for booking do |f| %>
-          <%= f.input :approval_status, as: :hidden, input_html: { value: 'approved'} %>
-          <%= f.submit 'Accept', class: 'btn btn-success m-2' %>
-        <% end %>
-
-        <%= simple_form_for booking do |f| %>
-          <%= f.input :approval_status, as: :hidden, input_html: { value: 'denied'} %>
-          <%= f.submit 'Reject', class: 'btn btn-dark' %>
-        <% end %>
-      <% end %>
-
-  </div>
+    </div>
   <% end %>
-
   <%= link_to "Return to Toys", toys_path, class: "btn btn-dark mt-2"  %>
 </div>
