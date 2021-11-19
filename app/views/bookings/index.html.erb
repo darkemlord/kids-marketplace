@@ -1,7 +1,7 @@
-<div class="container-fluid bookings-back">
+<div class="pt-5 container-fluid bookings-back">
   <div class="container align-items-center">
     <div class="title">
-      <h1 class="m-3 text-center">Your Bookings</h1>
+      <h1 class="text-center pb-2">Your Bookings</h1>
     </div>
     <% if @bookings.empty?  %>
       <h4 style="">You don't have any bookings! 🙁</h4>
@@ -66,6 +66,8 @@
   </div>
   <br>
   <br>
+  <br>
   <%= link_to "Return to Toys", toys_path, class: "toys-button ml-3"  %>
-
+  <br>
+  <br>
 </div>
