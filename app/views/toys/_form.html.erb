@@ -1,9 +1,9 @@
-<%= simple_form_for @toy do |f| %>
-  <%= f.input :name, placeholder: 'Teddy bear', label: "Name" %>
-  <%= f.input :description, placeholder: 'This is a cute Teddy bear!', label: "Description" %>
-  <%= f.input :category, placeholder: 'Soft Toy', label: "Category" %>
-  <%= f.input :price, placeholder: 'Soft Toy' %>
-  <%= f.input :condition, collection: Toy.conditions.keys, label: "Condition" %>
+<%= simple_form_for @toy, :html=> { class: 'create-form' } do |f| %>
+  <%= f.input :name, placeholder: 'Teddy bear', input_html: { autocomplete: 'off', class: "round-form" } %>
+  <%= f.input :description, as: :text, placeholder: 'This is a cute Teddy bear!', input_html: { class: "round-form" } %>
+  <%= f.input :category, placeholder: 'Soft Toy', input_html: { class: "round-form" }%>
+  <%= f.input :price, placeholder: '600', label: "Price per week", input_html: { class: "round-form" } %>
+  <%= f.input :condition, collection: Toy.conditions.keys, input_html: { class: "round-form" } %>
   <%= f.input :photo, as: :file, label: "Image" %>
   <%= f.submit class: 'btn btn-ghost' %>
 <% end %>
