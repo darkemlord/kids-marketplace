@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to toys_path, class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand pikachu" do %>
     <%= image_tag "https://secure.img1-fg.wfcdn.com/im/77981853/resize-h755-w755%5Ecompr-r85/8470/84707680/Pokemon+Pikachu+Wall+Decal.jpg" %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +9,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item ml-1 mr-1 mb-2">
-          <%= link_to "Home", toys_path, class: "nav-link navbar-button" %>
+          <%= link_to "Home", '/', class: "nav-link navbar-button" %>
+        </li>
+        <li class="nav-item ml-1 mr-1 mb-2">
+          <%= link_to "Toys!", toys_path, class: "nav-link navbar-button" %>
         </li>
         <li class="nav-item ml-1 mr-1 mb-2">
           <%= link_to "Your Bookings", bookings_path, class: "nav-link navbar-button" %>
@@ -23,8 +26,14 @@
           </div>
         </li>
       <% else %>
+        <li class="nav-item ml-1 mr-1 mb-2">
+          <%= link_to "Home", '/', class: "nav-link navbar-button" %>
+        </li>
+        <li class="nav-item ml-1 mr-1 mb-2">
+          <%= link_to "Toys!", toys_path, class: "nav-link navbar-button" %>
+        </li>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link navbar-button" %>
         </li>
       <% end %>
     </ul>

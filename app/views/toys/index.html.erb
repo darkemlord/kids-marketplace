@@ -26,6 +26,7 @@
         <div class="toy-grid__item">
           <%= link_to toy_path(toy.id) do %>
             <div class="toy-grid__item-photo-container">
+
               <% if toy.photo.attached? %>
                 <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
               <% else %>
@@ -42,6 +43,12 @@
         </div>
       <% end %>
     </div>
+  </div>
+</div>
 
+<div class="fixed-bottom">
+  <div class="go-booking">
+    <h2>Post your toy!</h2>
+    <div class="btn btn-primary"><%= link_to 'Lend a toy!', new_toy_path %></div>
   </div>
 </div>
