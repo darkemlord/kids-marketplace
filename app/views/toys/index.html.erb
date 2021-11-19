@@ -1,5 +1,6 @@
-<div class="wrapper" style="align-content: center;">
+<div class="wrapper" style="align-content: center">
   <div class="toy-grid-container">
+
     <header style="float: left; margin-bottom: 20px; width: 100%; border: 0px solid #000;">
       <h1 class="km-index-title">Kids Marketplace</h1>
       <h3><%= @available_toys.count %> items available around the world.</h3>
@@ -26,7 +27,6 @@
         <div class="toy-grid__item">
           <%= link_to toy_path(toy.id) do %>
             <div class="toy-grid__item-photo-container">
-
               <% if toy.photo.attached? %>
                 <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
               <% else %>
@@ -45,7 +45,6 @@
     </div>
   </div>
 </div>
-
 <div class="fixed-bottom">
   <div class="go-booking">
     <h2>Post your toy!</h2>
