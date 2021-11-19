@@ -54,7 +54,6 @@ $ui-color-text-lowlight: #dbbe8f;
 
 .km-text-background {
   background-color: $ui-color-text-background;
-
 }
 
 .page-buttons {
@@ -87,7 +86,6 @@ $ui-color-text-lowlight: #dbbe8f;
   font-size: 2.2em;
   padding-top: -5px;
   padding-left: 10px;
-
 }
 
 .km-search-bar__bar:focus {
@@ -110,6 +108,7 @@ $ui-color-text-lowlight: #dbbe8f;
   h1, h2 ,h3 ,h4{
     color: white;
   }
+}
 
 
 .bookings-back-img{
@@ -125,5 +124,4 @@ $ui-color-text-lowlight: #dbbe8f;
 .form-back-container{
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
     height: 100vh;
-
 }
