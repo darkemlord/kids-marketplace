@@ -8,6 +8,8 @@ gem 'cloudinary', '~> 1.16.0'
 # holding secret key for cloudinary
 gem 'dotenv-rails', groups: [:development]
 
+gem 'pg_search', '~> 2.3.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.1'
 # Use postgresql as the database for Active Record

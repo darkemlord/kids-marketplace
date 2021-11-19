@@ -9,4 +9,11 @@ class Toy < ApplicationRecord
   validates :price, presence: true
   validates :availability, presence: true
   enum condition: { "Brand new": 0, "Damaged": 1, "Used": 2 }
+
+  # Querying booking for availability
+  def self.unavailable(today, seven_days_from_now)
+    # results = ActiveRecord::Base.connection.execute("SELECT * FROM bookings WHERE (bookings.toy_id = 164)")
+    self.joins(:bookings).where("(bookings.start_date < ? AND bookings.end_date > ?) OR (bookings.start_date < ? AND bookings.end_date > ?)", today, seven_days_from_now, seven_days_from_now, seven_days_from_now).all
+  end
+
 end
