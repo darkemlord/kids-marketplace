@@ -1,82 +1,81 @@
-<div class="responsive container d-flex flex-column justify-content-between">
-
-  <% if @toy.photo.attached? %>
-  <%= cl_image_tag @toy.photo.key, class:'photo-class mt-3'%>
-  <% else %>
-  <%= image_tag 'background2.jpg', class:'photo-class'%>
-  <% end %>
-  <div class="show-title">
-    <div>
-      <h1><%= @toy.name %></h1>
-      <p><% @toy.user.address %></p>
-    </div>
-    <div>
-      <% if false %>
-        <p>Edit</p>
-      <% end %>
-      <p>★★★<%# @toy.rating %></p>
-    </div>
-  </div>
-  <div class="border-bottom"></div>
-  <div class="toy-details">
-    <div class="detail">
-      <h3>Description: </h3>
-      <% if @toy.description != nil %>
-        <p><%= @toy.description %></p>
-      <% else %>
-        <p>No description to show</p>
-      <% end %>
-    </div>
-    <div class="detail">
-      <h3>Category: </h3>
-      <% if @toy.category != nil %>
-        <p><%= @toy.category.capitalize %></p>
-      <% else %>
-        <p>Nil</p>
-      <% end %>
-    </div>
-    <div class="detail">
-      <h3>Condition: </h3>
-      <% if @toy.condition != nil %>
-        <p><%= @toy.condition.capitalize %></p>
-      <% else %>
-        <p>Nil</p>
-      <% end %>
+<div class="container-fluid bookings-back">
+  <div class="mt-3 responsive container d-flex flex-column justify-content-between">
+    <% if @toy.photo.attached? %>
+      <%= cl_image_tag @toy.photo.key, class:'photo-class mt-3'%>
+    <% else %>
+      <%= image_tag 'background2.jpg', class:'photo-class'%>
+    <% end %>
+    <div class="show-title">
+      <div>
+        <h1><%= @toy.name %></h1>
+        <p style="color: white"><% @toy.user.address %></p>
+      </div>
+      <div>
+        <% if false %>
+          <p>Edit</p>
+        <% end %>
+        <p style="color: gold">★★★<%# @toy.rating %></p>
+      </div>
     </div>
     <div class="border-bottom"></div>
-    <div class="detail">
-      <h3>Owner: <%= link_to @toy.user.name.capitalize, user_path(@toy) %></h3>
-    </div>
-    <div class="detail">
-      <h3>Location: </h3>
-      <% if @toy.user.address != nil %>
-        <p><%= @toy.user.address.capitalize %></p>
-      <% else %>
-        <p>Nil</p>
-      <% end %>
-    </div>
-    <div class="detail">
-      <h3>Child's age: </h3>
-      <% if @toy.user.child_age != nil %>
-        <p><%= @toy.user.child_age %> years old</p>
-      <% else %>
-        <p>Nil</p>
-      <% end %>
-
-    </div>
-    <div id="map"
+    <div class="toy-details">
+      <div class="detail">
+        <h3>Description: </h3>
+        <% if @toy.description != nil %>
+          <p style="color: white"><%= @toy.description %></p>
+        <% else %>
+          <p style="color: white" >No description to show</p>
+        <% end %>
+      </div>
+      <div class="detail">
+        <h3>Category: </h3>
+        <% if @toy.category != nil %>
+          <p style="color: white"><%= @toy.category.capitalize %></p>
+        <% else %>
+          <p>N/A</p>
+        <% end %>
+      </div>
+      <div class="detail">
+        <h3>Condition: </h3>
+        <% if @toy.condition != nil %>
+          <p style="color: white"><%= @toy.condition.capitalize %></p>
+        <% else %>
+          <p>N/A</p>
+        <% end %>
+      </div>
+      <div class="border-bottom"></div>
+      <div class="detail">
+        <h3>Owner: <%= link_to @toy.user.name.capitalize, user_path(@toy) %></h3>
+      </div>
+      <div class="detail">
+        <h3>Location: </h3>
+        <% if @toy.user.address != nil %>
+          <p style="color: white"><%= @toy.user.address.capitalize %></p>
+        <% else %>
+          <p>N/A</p>
+        <% end %>
+      </div>
+      <div class="detail">
+        <h3>Child's age: </h3>
+        <% if @toy.user.child_age != nil %>
+          <p style="color: white"><%= @toy.user.child_age %> years old</p>
+        <% else %>
+          <p>N/A</p>
+        <% end %>
+      </div>
+      <div id="map"
      style="width: 100%; height: 360px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-    <div class="bottom-spacer mt-5 mb-5">
+      </div>
+      <div class="bottom-spacer mt-5 mb-5">
+      </div>
     </div>
   </div>
-</div>
-  
-<div class="fixed-bottom">
-  <div class="go-booking">
-    <h2>¥<%= @toy.price %><span style="font-size:18px">/ week</span></h2>
-    <div class="btn btn-primary"><%= link_to 'Book Now', new_toy_booking_path(@toy) %></div>
+  <div class="fixed-bottom">
+    <div class="go-booking">
+      <h2>¥<%= @toy.price %><span style="font-size:18px">/ week</span></h2>
+      <div class="btn btn-primary"><%= link_to 'Book Now', new_toy_booking_path(@toy) %></div>
+    </div>
   </div>
 </div>
