@@ -126,10 +126,10 @@ flickr_toy_collection_array = [
 
 address = ["Tokyo", "London", "Chiba", "Hiroshima"]
 # A user can have many toys, but a toy only has one owner (Ask Sheriff Woody for more info)
-gareth = User.create!(name: "gareth", email: "gareth@lewagon.com", password: "123456789", address: "Tokyo", child_age: 1)
-anju = User.create!(name: "anju", email: "anju@lewagon.com", password: "123456789", address: "Chiba", child_age: 4)
-emanuel = User.create!(name: "emanuel", email: "emanuel@lewagon.com", password: "123456789", address: "Saitama", child_age: 9 )
-louis = User.create!(name: "louis",  email: "louis@lewagon.com", password: "123456789", address: "Kanagawa", child_age: 5)
+gareth = User.create!(name: "gareth", email: "gareth@lewagon.com", password: "123456789", address: "Threadneedle Street London EC2R 8AH", child_age: 1)
+anju = User.create!(name: "anju", email: "anju@lewagon.com", password: "123456789", address: "730-0031 Hiroshima, Naka Ward, Kamiyacho, 1 Chome−3−8", child_age: 4)
+emanuel = User.create!(name: "emanuel", email: "emanuel@lewagon.com", password: "123456789", address: "Cl 80 #80-90, Bogotá, Colombia", child_age: 9 )
+louis = User.create!(name: "louis",  email: "louis@lewagon.com", password: "123456789", address: "Ferry Building, San Francisco, CA, USA", child_age: 5)
 
 users = [gareth, anju, emanuel, louis]
 
@@ -166,7 +166,7 @@ puts "creating bookings"
   Booking.create(
     start_date: Date.today,
     end_date: Date.today,
-    delivery_option: 'deliver',
+    delivery_option: 'Delivery',
     user_id: rand(1..3),
     toy_id: rand(1..10)
   )

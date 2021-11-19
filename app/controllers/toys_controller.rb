@@ -9,6 +9,15 @@ class ToysController < ApplicationController
   def show
     #@toy = Toy.find(params[:id])
     set_toy
+    @user_id = @toy.user.id
+    @users = User.where(id: @user_id)
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+
+    end
   end
 
   def new
