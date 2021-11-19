@@ -205,33 +205,18 @@ flickr_toy_collection_array = [
 puts "creating users"
 dotdotdot
 puts ""
-address = [
-  {
-    place: "Tokyo",
-    geolocation: [139.77, 35.68]
-  },
-  {
-    place: "London",
-    geolocation: [-0.12764739999999997, 51.507321899999994]
-  },
-  {
-    place: "Chiba",
-    geolocation: [140.12333, 35.605]
-  },
-  {
-    place: "Hiroshima",
-    geolocation: [132.75, 34.43333]
-  }
-]
 
-louis = User.create!(name: "louis",  email: "louis@lewagon.com", password: "123456789", address: address[0][:place], child_age: 5, latitude: address[0][:geolocation][0], longitude: address[0][:geolocation][1])
+
+louis = User.create!(name: "louis",  email: "louis@lewagon.com", password: "123456789", address: "Ferry Building, San Francisco, CA, USA", child_age: 5)
 puts "Louis. place: #{louis.address} latitude: #{louis.latitude} longitude: #{louis.longitude}"
-gareth = User.create!(name: "gareth", email: "gareth@lewagon.com", password: "123456789", address: address[1][:place], child_age: 1, latitude: address[1][:geolocation][0], longitude: address[1][:geolocation][1])
+gareth = User.create!(name: "gareth", email: "gareth@lewagon.com", password: "123456789", address: "Threadneedle Street London EC2R 8AH", child_age: 1)
 puts "Gareth. place: #{gareth.address} latitude: #{gareth.latitude} longitude: #{gareth.longitude}"
-emanuel = User.create!(name: "emanuel", email: "emanuel@lewagon.com", password: "123456789", address: address[2][:place], child_age: 9, latitude: address[2][:geolocation][0], longitude: address[2][:geolocation][1] )
+emanuel = User.create!(name: "emanuel", email: "emanuel@lewagon.com", password: "123456789", address: "Cl 80 #80-90, Bogotá, Colombia", child_age: 9)
 puts "Emanuel. place: #{emanuel.address} latitude: #{emanuel.latitude} longitude: #{emanuel.longitude}"
-anju = User.create!(name: "anju", email: "anju@lewagon.com", password: "123456789", address: address[3][:place], child_age: 4, latitude: address[3][:geolocation][0], longitude: address[3][:geolocation][1])
+anju = User.create!(name: "anju", email: "anju@lewagon.com", password: "123456789", address: "730-0031 Hiroshima, Naka Ward, Kamiyacho, 1 Chome−3−8", child_age: 4)
 puts "Anju. place: #{anju.address} latitude: #{anju.latitude} longitude: #{anju.longitude}"
+
+
 
 users = [gareth, anju, emanuel, louis]
 
@@ -262,6 +247,7 @@ end
 puts "created #{Toy.count} toys."
 
 puts "creating bookings"
+
 puts "booking 3 toys to test the availability filter."
 dotdotdot
 puts ""
@@ -288,6 +274,7 @@ while i < 3 do
     delivery_option: 1,
     user_id: random_booking_creator.id, # random booking person
     toy_id: Toy.all.sample.id # random toy to be booked
+
   )
   puts availability_notes[i]
   # puts "#{Toy.all.sample.id}"

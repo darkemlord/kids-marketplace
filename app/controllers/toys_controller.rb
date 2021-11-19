@@ -10,6 +10,15 @@ class ToysController < ApplicationController
 
   def show
     set_toy
+    @user_id = @toy.user.id
+    @users = User.where(id: @user_id)
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+
+    end
   end
 
   def new
@@ -20,8 +29,10 @@ class ToysController < ApplicationController
   def create
     @toy = Toy.new(toy_params)
 
+
     @toy.user = current_user
     authorize @toy
+
 
     if @toy.save
       redirect_to toy_path(@toy)

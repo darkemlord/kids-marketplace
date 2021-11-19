@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = policy_scope(Booking).order(start_date: :desc) # as a renter
-    @bookings_as_owner = current_user.bookings_as_owner.order(start_date: :desc)
+    @bookings = policy_scope(Booking).order(created_at: :desc) # as a renter
+    @bookings_as_owner = current_user.bookings_as_owner.order(created_at: :desc)
   end
 
   def new
