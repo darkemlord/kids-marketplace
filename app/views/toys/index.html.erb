@@ -2,23 +2,19 @@
   <div class="toy-grid-container">
     <h1>All Our Toys And Kids Stuff</h1>
     <h2><%= @toys.all.count %> items available around the world.</h2>
-    <%= form_tag toys_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a toy"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+
+
+
+    <!-- Make a partial here -->
     <div class="toy-grid">
-      <% @toys.each do |toy| %>
+      <% @available_toys.each do |toy| %>
         <div class="toy-grid__item">
           <%= link_to toy_path(toy.id) do %>
             <div class="toy-grid__item-photo-container">
-            <% if toy.photo.attached? %>
-              <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
+              <% if toy.photo.attached? %>
+                <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
               <% else %>
-              <%= image_tag 'background.jpg', crop: :fill, class: "photo-class" %>
+                <%= image_tag 'background.jpg', crop: :fill, class: "photo-class" %>
               <% end %>
             </div>
             <div class="toy-grid__item-text-container">
@@ -30,6 +26,6 @@
         </div>
       <% end %>
     </div>
-  </div>
 
+  </div>
 </div>

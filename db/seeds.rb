@@ -221,6 +221,7 @@ while i < 3 do
   puts availability_notes[i]
   # puts "#{Toy.all.sample.id}"
   puts "Booking id: #{booking.id} #{booking.toy.name} Toy owner: #{booking.toy.user.name} Booked by: #{booking.user.name} Booked from: #{booking.start_date}, until: #{booking.end_date}"
+  puts ""
   i += 1
 end
 

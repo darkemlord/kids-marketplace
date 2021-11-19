@@ -1,7 +1,7 @@
 
 .card-product {
   overflow: hidden;
-  height: 120px;
+  // height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -29,7 +29,7 @@
 }
 
 .card-product .card-product-infos {
-  padding: 24px;
+ padding: 8px;
 }
 
 .card-product a {
@@ -44,8 +44,18 @@
 
 .booking-status {
   border: solid 1px;
-  width: 75%;
+  width: 80px;
   padding: 1px;
   text-align: center;
   border-radius: 2px;
+}
+
+.approval-buttons {
+    display: flex;
+  }
+
+@media(max-width: 700px) {
+  .card-content {
+    // flex-direction: column;
+  }
 }

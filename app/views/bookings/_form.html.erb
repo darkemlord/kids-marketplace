@@ -1,6 +1,6 @@
 <%= simple_form_for [@toy, @booking] do |f|%>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.input :start_date, input_html: { class:'form-date' } %>
+  <%= f.input :end_date, input_html: { class:'form-date'} %>
   <%= f.input :delivery_option, collection: Booking.delivery_options.keys %>
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.submit class: 'btn btn-ghost' %>
 <% end %>

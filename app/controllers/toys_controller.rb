@@ -5,6 +5,7 @@ class ToysController < ApplicationController
   def index
     @toys = policy_scope(Toy)
     @available_toys = availability_window_checker
+    #@toys = @available_toys
   end
 
   def show
@@ -18,8 +19,10 @@ class ToysController < ApplicationController
 
   def create
     @toy = Toy.new(toy_params)
+
     @toy.user = current_user
     authorize @toy
+
     if @toy.save
       redirect_to toy_path(@toy)
     else
@@ -28,6 +31,7 @@ class ToysController < ApplicationController
   end
 
   private
+
   def availability_window_checker
     # date format: 2021-11-18
     today = DateTime.now.to_date
@@ -46,6 +50,7 @@ class ToysController < ApplicationController
     end
     @available_toys
   end
+
 
   def set_toy
     @toy = Toy.find(params[:id])

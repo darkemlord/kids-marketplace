@@ -1,0 +1,12 @@
+<div class="approval-buttons">
+  <% if booking.pending? %>
+    <%= simple_form_for booking do |f| %>
+      <%= f.input :approval_status, as: :hidden, input_html: { value: 'approved'} %>
+      <%= f.submit 'Accept', class: 'btn btn-success ml-2 mr-2 mt-0 mb-2' %>
+    <% end %>
+    <%= simple_form_for booking do |f| %>
+      <%= f.input :approval_status, as: :hidden, input_html: { value: 'denied'} %>
+      <%= f.submit 'Reject', class: 'btn btn-dark ml-2 mt-0 mb-2' %>
+    <% end %>
+  <% end %>
+</div>
