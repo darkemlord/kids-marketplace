@@ -1,10 +1,10 @@
 <div class="pt-5 container-fluid bookings-back">
   <div class="container align-items-center">
     <div class="title">
-      <h1 class="text-center pb-2">Your Bookings</h1>
+      <h1 class="text-center pb-2">Your Reservations</h1>
     </div>
     <% if @bookings.empty?  %>
-      <h4 style="">You don't have any bookings! 🙁</h4>
+      <h4 style="">You don't have any reservations! 🙁</h4>
       <br>
       <%= link_to "Reserve toy", toys_path, class:"toys-button pl-5 pr-5" %>
       <br>
@@ -34,12 +34,12 @@
     <% end %>
     <!--BOOKINGS AS A OWNER -->
     <div class="title">
-      <h1 class="m-3 text-center">Your Bookings request</h1>
+      <h1 class="m-3 text-center">Reservation requests for you</h1>
     </div>
     <% if @bookings_as_owner.empty?  %>
       <br>
       <br>
-      <h4>No bookings yet!</h4>
+      <h4>No reservations yet!</h4>
       <br>
       <br>
     <% else %>
