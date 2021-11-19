@@ -37,6 +37,9 @@ p, a{
 
 .km-text-dark {
   color: #1B2631;
+    &:hover {
+    color: #1B2631;
+  }
 }
 
 .km-text-price {
