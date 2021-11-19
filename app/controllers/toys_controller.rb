@@ -3,9 +3,23 @@ class ToysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @toys = policy_scope(Toy)
-    @available_toys = availability_window_checker
-    #@toys = @available_toys
+
+
+
+
+    if params[:query].present?
+      @toys = policy_scope(Toy)
+      @available_toys = availability_window_checker
+      #@available_toys = Toy.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = "name ILIKE :query OR category ILIKE :query"
+      @available_toys = Toy.where(sql_query, query: "%#{params[:query]}%")
+
+    else
+      @toys = policy_scope(Toy)
+      @available_toys = availability_window_checker
+    end
+
+
   end
 
   def show
