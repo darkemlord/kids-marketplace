@@ -54,7 +54,7 @@
 
 
 .photo-class {
-  object-fit: cover;
+  object-fit: fill;
   width:100%;
   height: 300px;
   box-shadow: 3px  rgba(0, 0, 0, 0.6);
@@ -83,6 +83,8 @@
   display: block;
   padding-bottom: 50px;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+  background-image: url('background.jpg');
+  background-size: cover;
 }
 
   .toy-grid {
@@ -116,7 +118,7 @@
   }
 
   .photo-class {
-    object-fit: cover;
+    object-fit: fill;
     width:100%;
     height: 250px;
     box-shadow: 10px -8px 5px 0px rgba(0,0,0,0.4);
@@ -125,7 +127,6 @@
   .toy-grid__item-text-container {
     padding-left: 0px;
     padding-right: 0px;
-
   }
 }
 
@@ -229,7 +230,6 @@
       font-size: 20px;
       font-weight: bold;
     }
-
 
   .toy-text--name {
     font-size: 16px;
