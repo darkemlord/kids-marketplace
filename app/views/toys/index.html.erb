@@ -1,17 +1,13 @@
-<div class="wrapper" style="align-content: center;">
+<div class="wrapper" style="align-content: center">
   <div class="toy-grid-container">
-    <h1>All Our Toys And Kids Stuff</h1>
-    <h2><%= @toys.all.count %> items available around the world.</h2>
-
-
-
+    <h1 style="color: white">All Our Toys And Kids Stuff</h1>
+    <h2 style="color: #F0FFF0"><%= @toys.all.count %> items available around the world.</h2>
     <!-- Make a partial here -->
     <div class="toy-grid">
       <% @available_toys.each do |toy| %>
         <div class="toy-grid__item">
           <%= link_to toy_path(toy.id) do %>
             <div class="toy-grid__item-photo-container">
-
               <% if toy.photo.attached? %>
                 <%= cl_image_tag toy.photo.key, crop: :fill, class: "photo-class" %>
               <% else %>
@@ -30,7 +26,6 @@
     </div>
   </div>
 </div>
-
 <div class="fixed-bottom">
   <div class="go-booking">
     <h2>Post your toy!</h2>
