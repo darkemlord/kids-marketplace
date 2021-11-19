@@ -83,6 +83,8 @@
   display: block;
   padding-bottom: 50px;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+  background-image: url('background.jpg');
+  background-size: cover;
 }
 
   .toy-grid {
@@ -229,9 +231,10 @@
       font-size: 20px;
       font-weight: bold;
     }
- 
+
 
   .toy-text--name {
     font-size: 16px;
   }
+}
 }
