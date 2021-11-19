@@ -38,6 +38,7 @@ p, a{
 
 $ui-color-text-highlight: #D68910;
 $ui-color-text-background: #d3aa67;
+$ui-color-text-lowlight: #dbbe8f;
 
 .km-text-dark {
   color: #1B2631;
@@ -60,6 +61,48 @@ $ui-color-text-background: #d3aa67;
   display: space-between;
 }
 
+
+.km-search-bar-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 4.5em;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+::placeholder {
+  color: $ui-color-text-lowlight;
+}
+
+.km-search-bar__bar {
+  max-width: 512px;
+  width: 100%;
+  align-items: center;
+  border-radius: 25px;
+  margin-right: 10px;
+  border: 1px solid $ui-color-text-highlight;
+  font-weight: 500;
+  color: $ui-color-text-lowlight;
+  font-size: 2.2em;
+  padding-top: -5px;
+  padding-left: 10px;
+
+}
+
+.km-search-bar__bar:focus {
+  color: $ui-color-text-highlight;
+  border: 1px solid $ui-color-text-highlight;
+}
+
+.km-search-bar__button {
+  border-radius: 50%;
+  height: 2.6em;
+  width: 2.7em;
+  border: 0px;
+  color: #fff;
+}
+
 .bookings-back{
   width: 100%;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
@@ -67,7 +110,7 @@ $ui-color-text-background: #d3aa67;
   h1, h2 ,h3 ,h4{
     color: white;
   }
-}
+
 
 .bookings-back-img{
   object-fit: contain;
@@ -82,4 +125,5 @@ $ui-color-text-background: #d3aa67;
 .form-back-container{
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
     height: 100vh;
+
 }
