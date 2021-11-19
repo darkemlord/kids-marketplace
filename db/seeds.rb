@@ -31,6 +31,14 @@ puts "creating stuff...."
 # Faker::Internet.email(name: 'Nancy') #=> "nancy@terry.biz"
 
 # condition: "brand new": 0, damaged: 1, used: 2
+#{
+#    item: "",
+#    category: "",
+#    description: "",
+#    condition: 0,
+#    flickr_image_url: "",
+#    flickr_imagepage_url: ""
+#  },
 flickr_toy_collection_array = [
   {
     item: "Knit Elephant",
@@ -127,8 +135,71 @@ flickr_toy_collection_array = [
     condition: 0,
     flickr_image_url: "https://live.staticflickr.com/1692/24961001054_85a6cabd34_k.jpg",
     flickr_imagepage_url: "https://www.flickr.com/photos/47064420@N03/24961001054/in/photolist-4K9cFX-frFtep-2BNLh-E2HDZ9-5q8iBS-NHr77H-qnq25P-22LFLHf-27LEWqw-aSG9Mr-qh6Bj-24NnTuQ-4aeeJr-detUPw-as76yj-VgWr4v-22GnXCm-9uQ3bq-7uA3kY-C6sWW-95Gwfd-cqVcR-oj3T4-TyfLbj-53GBMn-65sh3Q-7uA3md-8kds1M-KgBr7g-PHvQH5-9xHKfu-dWxPQa-DrQCG-aj6LhJ-cjFhbb-LywVv-HVRea-Tsye2U-RFGNCZ-5mFeT-22QnYQy-sb5pPd-aGwPDx-dcQJME-aGwMCH-dWDsrj-9n5eu3-PfQfxU-3pcdov-LAesK"
-  }
-
+  },
+  {
+    item: "big baby toy collection",
+    category: "baby toys",
+    description: "massive collection of baby-suitable toys",
+    condition: 0,
+    flickr_image_url: "https://live.staticflickr.com/3684/11819313295_ddd0d72aaf_h.jpg",
+    flickr_imagepage_url: "https://www.flickr.com/photos/walimai/11819313295/in/photolist-j1r54H-6cz6Qu-SSbEyN-DsRkbM-4Xw9SE-duQoCZ-22dY8VP-25X4LaX-9KX8KX-27JDyda-auBXT2-FNWp4u-HqwJsb-ENp96m-ihRtUF-FWUYvf-DoKSCk-aCyxvP-jsMur3-CDHWyR-mxbeLq-sAr2RD-67Dd87-mx9o4x-ihRuva-ETuWx1-igEMtY-R6G4mz-FNWqfY-DsRaya-aJpmyR-259Dwcf-23srXaL-CDJ1C2-SHXsVL-5w3srx-DsRgpi-kmf4h-nbphVy-wy5e4e-HA54mW-f4Qsdq-EkZiUF-22mweGt-288eF1Y-MsgnH-2786ab2-zC1wqG-9dXdJD-9dXdJH"
+  },
+  {
+    item: "Whoozit Whatzat",
+    category: "baby toys",
+    description: "Whoozit Whatzat single item",
+    condition: 0,
+    flickr_image_url: "https://live.staticflickr.com/6122/5978301046_65e5387504.jpg",
+    flickr_imagepage_url: "https://www.flickr.com/photos/magisch/5978301046/in/photolist-a7hmBY-98MJXg-cjFhbb-6cQexa-j1r54H-6cz6Qu-SSbEyN-DsRkbM-4Xw9SE-duQoCZ-22dY8VP-25X4LaX-9KX8KX-27JDyda-auBXT2-FNWp4u-HqwJsb-ENp96m-ihRtUF-FWUYvf-DoKSCk-aCyxvP-jsMur3-CDHWyR-mxbeLq-sAr2RD-67Dd87-mx9o4x-ihRuva-ETuWx1-igEMtY-R6G4mz-FNWqfY-DsRaya-aJpmyR-259Dwcf-23srXaL-CDJ1C2-SHXsVL-5w3srx-DsRgpi-kmf4h-nbphVy-wy5e4e-HA54mW-f4Qsdq-EkZiUF-22mweGt-288eF1Y-MsgnH"
+  },
+  {
+    item: "LEGO Circus Baby",
+    category: "lego",
+    description: "Cute lego toy",
+    condition: 0,
+    flickr_image_url: "https://live.staticflickr.com/3703/33601398602_7492ad86ca_h.jpg",
+    flickr_imagepage_url: "https://www.flickr.com/photos/fallentomato/33601398602/in/photolist-TceX9E-DWNvqE-CrJ9zX-9bnVHB-aJaicx-24yYYss-X4uUsw-D3Ce68-21tRv4H-F83TtR-SGVyGh-dA2xnL-douRoK-R6G4jR-DB7FAk-23JjmCX-dzW6yK-JZezAW-9R4dx-222b3b5-DxHgew-F83Qje-Hyw1S8-ngWCAq-ihRupP-ihQThA-dzWvuM-9ycGeQ-aspt2x-asrdP3-XpEnyQ-S24VKu-DqGTqN-igJ3up-24M9Eex-7uupMx-dJ9hQ6-2cG81Qc-qdoy39-fcanxF-brYcex-Mxz2rt-bjJCAE-iaRHYe-R754Hd-Lt4Kpv-9u7i8q-hxV7kj-4JsYDi-okut2b"
+  },
+  {
+    item: "Furbies",
+    category: "soft toys",
+    description: "Cute Furby collection.",
+    condition: 0,
+    flickr_image_url: "https://live.staticflickr.com/8074/8314450323_b27e3f68be_b.jpg",
+    flickr_imagepage_url: "https://www.flickr.com/photos/jovriens/8314450323/in/photolist-dEHJpM-LywDk-dMCN5H-912MZ6-dJFShC-CgMHoZ-23sme6V-aqEhBz-6irxYA-EBzs7Y-r4ErEA-oFWL-NYr3L-6infNg-KEsz-VHPVVx-WaugZJ-dQ3GTY-detVdQ-VgLyNK-GKJZpn-WaugAh-Mhb5SM-dh2RtM-bscbCt-VAPHVy-3Ny79j-dFioh9-UPkqRH-qTzrS5-Y3VreJ-4qWsA7-9SyvDn-6oAm42-a78168-9SBp6U-ppaeWm-2cmTaya-bo8Dvm-aEYpwg-cqVcs-tRywVb-9epUbC-sj8t1L-at19hJ-7zenJ4-qsAkoH-285KQBd-9m4Lmq-oeEVA4"
+  },
+  {
+    item: "Godzilla action figure set of 2",
+    category: "action figures",
+    description: "Big action Godzilla figures.",
+    condition: 0,
+    flickr_image_url: "https://live.staticflickr.com/2434/3563739646_40707df36f_k.jpg",
+    flickr_imagepage_url: "https://live.staticflickr.com/5717/23082892869_4ac76c540d_k.jpg"
+  },
+  {
+    item: "Transformers action figures set of 20",
+    category: "action figures",
+    description: "Big set of transformer toys.",
+    condition: 0,
+    flickr_image_url: "https://live.staticflickr.com/5717/23082892869_4ac76c540d_k.jpg",
+    flickr_imagepage_url: "https://www.flickr.com/photos/gogdog/23082892869/in/photolist-BaKRRx-fgvbs5-HAEGRr-WBpHwA-27ZX7t9-Sdd3V8-9Sjews-UqQxmr-EHPMUQ-VqJaNG-9WJ5b3-dSRyXB-9Sgm5a-khzUb4-duspmJ-UMEpFY-bE4okw-qhNC4r-czyScJ-SdMEUJ-TiNCas-fgvdL7-9UzALP-fgfZmP-aLA7LX-LdyrJ-GF18aG-DL33rM-2dH3khE-8Xg1ef-jJPHVh-Wq4Sw1-diuoch-bruQnA-fcxKwm-QC44H2-k8zTpt-UUCDa3-9UaCeW-rUM1AD-WDQpq1-cozu8j-b2j6Xz-fA3MF8-WBN6jh-UU567N-cwAUuA-aZP6Tt-k8zH9i-bWmTn1"
+  },
+  {
+    item: "Star Wars",
+    category: "action figures",
+    description: "Massive Star Wars collection",
+    condition: 0,
+    flickr_image_url: "https://live.staticflickr.com/8621/16259010897_bfbdd51011_k.jpg",
+    flickr_imagepage_url: "https://www.flickr.com/photos/doc_brown/16259010897/in/photolist-qLKFu6-ZtJwsy-eAyRj2-25jmMKr-5JqCV3-9moxrU-2jc5Dc6-bPDU1n-piAwYE-5JfNdh-bAKfmA-8hMz4-bAwFYQ-wv139d-W2VkuY-ST7tnS-r3X2Bf-2bKKM9d-62GuMc-qAtisK-6W9Mub-u52S7-6w7ySr-oDywds-4ueLwK-7Xgdzw-bPDU3V-bPDTNZ-bAKeW1-KgakN-c7dXLo-c7aJjS-s8sbhs-7U4QqH-cS4DdL-21QdS7j-qLBcv7-UoXwZj-bAwFXj-bAPwSb-bAPwX1-W2Vkof-2maK6dU-2iw3e6y-2maSzhx-ivrFSP-6F5na3-bPrk7H-2kLv7NP-bAwFZU"
+  },
+  {
+    item: "Lethal Water Gun",
+    category: "outdoor toys",
+    description: "Really strong pump action water gun.",
+    condition: 0,
+    flickr_image_url: "https://live.staticflickr.com/5184/5653390473_15808f7642_b.jpg",
+    flickr_imagepage_url: "https://www.flickr.com/photos/britanglishman/5653390473/in/photolist-2jZA5Tm-2haYSi4-2mhnEnU-2mi3m6K-2jMKzaQ-2jZKunx-2k3tS5j-2kBkha4-2mwNPed-2kUmdm3-2is7KNb-2mo7fgY-2mo3ALS-9Bz72x-qoUrqX-2jgXntm-2m6q8c7-4AbSVa-9YYDqH-52cQ5m-9BC6rb-CTk4ej-2hSaXqB-2aXnR2F-4Ag9s1-2mo2kTA-2mgyUjM-5Adove-2gpc9TE-2mdMfws-ph11Uz-28BTmPd-2gzajmR-2iLVdta-s6bDZs-9Bz92F-5BYksm-8dngjw-9Bz9Hn-s6kdE2-snKjBR-KRU7tb-52cgwG-9BC7cL-2gWMHMX-snKtBe-s4ste8-snM4EB-2jMVjkk-8rPtNi"
+  },
 ]
 
 puts "creating users"

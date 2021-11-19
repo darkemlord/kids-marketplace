@@ -24,6 +24,15 @@
   margin-bottom: 8px;
 }
 
+.toy-text--category {
+  color: #fff;
+  font-size: 16px;
+  float: right;
+  border-radius: 5px;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-weight: bold;
+}
 
 /* toy/item grid */
 .toy-grid-container {
@@ -45,7 +54,6 @@
     grid-template-columns: repeat(4, 1fr);/* repeat(number of columns/rows, the column width we want); fr is fraction*/
     grid-auto-rows: 1fr;
     grid-gap: 30px;
-    border: 0px solid blue;
     padding: 0px;
   }
 

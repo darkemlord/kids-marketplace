@@ -29,12 +29,19 @@ p, a{
   font-family: 'Genos', sans-serif;
 }
 
+$ui-color-text-highlight: #D68910;
+$ui-color-text-background: #d3aa67;
+
 .km-text-dark {
   color: #1B2631;
 }
 
-.km-text-price {
-  color: #D68910;
+.km-text-highlight {
+  color: $ui-color-text-highlight;
+}
+
+.km-text-background {
+  background-color: $ui-color-text-background;
 }
 
 .page-buttons {

@@ -20,7 +20,8 @@
             <div class="toy-grid__item-text-container">
               <%= link_to toy.name, toy_path(toy.id), class: "toy-text--name km-text-dark km-font-main" %>
               <p class="toy-text--description km-text-dark km-font-main"><%= toy.description %></p>
-              <p class="toy-text--price km-text-dark km-font-main">Rental: <strong class="km-text-price"><span>¥<%= toy.price %></strong></span>/week</p>
+              <p class="toy-text--price km-text-dark km-font-main">Rental: <strong class="km-text-price km-text-highlight"><span>¥<%= toy.price %></strong></span>/week</p>
+              <span class="toy-text--category km-font-main km-text-background"><%= toy.category %></span>
             </div>
           <% end %>
         </div>
