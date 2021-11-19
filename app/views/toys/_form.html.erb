@@ -5,5 +5,5 @@
   <%= f.input :price, placeholder: '600', label: "Price per week", input_html: { class: "round-form" } %>
   <%= f.input :condition, collection: Toy.conditions.keys, input_html: { class: "round-form" } %>
   <%= f.input :photo, as: :file, label: "Image" %>
-  <%= f.submit class: 'btn btn-ghost' %>
+  <%= f.submit class: 'btn btn-ghost', value: "Lent out!" %>
 <% end %>
