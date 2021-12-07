@@ -1,6 +1,6 @@
 #🤖 Kids Market place
 
-An app to tip street artist in japan!
+An app to rent and lend your toys!
 
 _DROP SCREENSHOT HERE_
 <br>
