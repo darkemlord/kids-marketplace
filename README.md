@@ -1,4 +1,4 @@
-# 📚 Kids Market place
+#🤖 Kids Market place
 
 An app to tip street artist in japan!
 
